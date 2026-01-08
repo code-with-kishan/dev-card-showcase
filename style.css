@@ -2350,7 +2350,7 @@ html {
     font-size: 1.1rem;
 }
 
-/* Code Block */
+/* Default (Dark Theme) */
 .code-block {
     background: #0f172a;
     padding: 15px;
@@ -2362,11 +2362,22 @@ html {
 
 .code-block code {
     font-family: 'Fira Code', monospace;
-    color: var(--text-primary);
+    color: #e5e7eb;
     font-size: 0.85rem;
     display: block;
     overflow-x: auto;
 }
+
+/* Light Theme Fix */
+.light-theme .code-block {
+    background: #f8fafc;            /* light background */
+    border: 1px solid #e2e8f0;
+}
+
+.light-theme .code-block code {
+    color: #0f172a;                 /* dark readable text */
+}
+
 
 .copy-btn {
     position: absolute;
