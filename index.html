@@ -137,6 +137,15 @@
 
     </section>
 
+    <!-- 🏷️ SKILL FILTER SECTION -->
+    <section class="skill-filter-section">
+        <div class="skill-filter-header">
+            <span>🏷️ Filter by Skills:</span>
+            <button id="clearSkills" class="clear-skills-btn">Clear All</button>
+        </div>
+        <div id="skillTags" class="skill-tags-container"></div>
+    </section>
+
 
     <!-- Main heading of the website -->
     <h1><span id="typewriter"></span></h1>
@@ -146,11 +155,15 @@
     <div class="card-container">
 
         <!-- ADMIN CARD - Don't modify this card -->
-        <div class="card">
+        <div class="card" data-skills="leadership,opensource">
             <div class="card-inner">
                 <img src="images/admin.jpg" alt="Admin Photo" class="card-img">
                 <h2>Project Admin</h2>
                 <span class="role">Maintainer</span>
+                <div class="card-skills">
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">OpenSource</span>
+                </div>
                 <p>"Welcome to the project! Fork this repo and add your card below."</p>
                 <a href="https://github.com/Jayanta2004" class="card-btn" target="_blank">
                     <i class="fab fa-github"></i> GitHub
@@ -160,11 +173,16 @@
 
         <!-- 👇 CONTRIBUTORS: START COPYING FROM HERE 👇 -->
         <!-- This is the TEMPLATE card - copy this entire block and paste it below -->
-        <div class="card">
+        <div class="card" data-skills="html,css,javascript">
             <div class="card-inner">
                 <img src="images/user.png" alt="User Photo" class="card-img">
                 <h2>Contributor Name</h2>
                 <span class="role">Developer</span>
+                <div class="card-skills">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                </div>
                 <p>"I learned how to make a Pull Request today!"</p>
                 <a href="#" class="card-btn" target="_blank">View Profile</a>
             </div>
@@ -172,28 +190,41 @@
         <!-- 👆 CONTRIBUTORS: END COPYING HERE 👆 -->
         
 
-        <div class="card">
+        <div class="card" data-skills="javascript,frontend">
             <div class="card-inner">
                 <img src="images/tankan.jpg" alt="User Photo" class="card-img">
                 <h2>Chirag Tankan</h2>
                 <span class="role">Developer</span>
+                <div class="card-skills">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Frontend</span>
+                </div>
                 <p>"Professional Contributor"</p>
                 <a href="http://github.com/ChiragTankan/" class="card-btn" target="_blank">View Profile</a>
             </div>
         </div>
         
-        <div class="card">
+        <div class="card" data-skills="html,css,javascript">
             <img src="images/mohit-yadav.jpg" alt="Mohit Yadav's Photo" class="card-img">
             <h2>Mohit Yadav</h2>
             <span class="role">Frontend Wizard</span>
+            <div class="card-skills">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+            </div>
             <p>"Hello world! This is my first PR."</p>
             <a href="https://github.com/19-mohityadav" class="card-btn" target="_blank">GitHub</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-skills="python,backend">
             <img src="images/Sameer-Baral.jpg" alt="Sameer's Photo" class="card-img">
             <h2>Sameer Baral</h2>
             <span class="role">Developer</span>
+            <div class="card-skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Backend</span>
+            </div>
             <p>"This is my first Pull Request"</p>
             <a href="https://github.com/SameerBaral" class="card-btn" target="_blank">GitHub</a>
         </div>
@@ -805,10 +836,11 @@ document.addEventListener("DOMContentLoaded", () => {
     </script>
 
 
-    <!-- 🔍 ENHANCED SEARCH & FILTER SCRIPT -->
     <script>
+        /* ---------- ENHANCED SEARCH & FILTER SCRIPT ---------- */
         let currentFilter = 'all';
         let currentSearch = '';
+        let selectedSkills = new Set();
 
         function filterCards() {
             currentSearch = document.getElementById("searchInput").value.toLowerCase();
@@ -835,14 +867,18 @@ document.addEventListener("DOMContentLoaded", () => {
             cards.forEach(card => {
                 const name = card.querySelector("h2").innerText.toLowerCase();
                 const role = card.querySelector(".role").innerText.toLowerCase();
+                const cardSkills = card.dataset.skills ? card.dataset.skills.split(',') : [];
 
                 const matchesSearch = name.includes(currentSearch);
                 const matchesFilter = currentFilter === 'all' ||
                     (currentFilter === 'developer' && role.includes('developer')) ||
                     (currentFilter === 'contributor' && role.includes('contributor')) ||
                     (currentFilter === 'maintainer' && role.includes('maintainer'));
+                
+                const matchesSkills = selectedSkills.size === 0 || 
+                    [...selectedSkills].some(skill => cardSkills.includes(skill.toLowerCase()));
 
-                if (matchesSearch && matchesFilter) {
+                if (matchesSearch && matchesFilter && matchesSkills) {
                     card.style.display = "block";
                     card.classList.add('loading');
                     visibleCount++;
@@ -858,6 +894,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 noResults.classList.remove('show');
             }
         }
+
+        // Skill filter functions
+        function initSkillFilters() {
+            const allSkills = new Set();
+            document.querySelectorAll('.card').forEach(card => {
+                const skills = card.dataset.skills;
+                if (skills) {
+                    skills.split(',').forEach(skill => allSkills.add(skill.trim().toLowerCase()));
+                }
+            });
+
+            const skillTagsContainer = document.getElementById('skillTags');
+            [...allSkills].sort().forEach(skill => {
+                const tag = document.createElement('button');
+                tag.className = 'skill-filter-tag';
+                tag.textContent = skill.charAt(0).toUpperCase() + skill.slice(1);
+                tag.onclick = () => toggleSkillFilter(skill, tag);
+                skillTagsContainer.appendChild(tag);
+            });
+        }
+
+        function toggleSkillFilter(skill, tagElement) {
+            if (selectedSkills.has(skill)) {
+                selectedSkills.delete(skill);
+                tagElement.classList.remove('active');
+            } else {
+                selectedSkills.add(skill);
+                tagElement.classList.add('active');
+            }
+            applyFilters();
+        }
+
+        document.getElementById('clearSkills').addEventListener('click', () => {
+            selectedSkills.clear();
+            document.querySelectorAll('.skill-filter-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            applyFilters();
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initSkillFilters();
+        });
 
         // Scroll to Top Functionality
         function scrollToTop() {

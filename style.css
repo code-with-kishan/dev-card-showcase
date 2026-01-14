@@ -640,6 +640,105 @@ h1::after {
     align-items: center;
 }
 
+/* =========================================
+   SKILL FILTER SECTION
+   ========================================= */
+.skill-filter-section {
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.skill-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-filter-header span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.clear-skills-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--border-primary);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.clear-skills-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.skill-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-filter-tag {
+    padding: 8px 16px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--primary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-filter-tag:hover {
+    background: rgba(56, 189, 248, 0.2);
+    transform: translateY(-2px);
+}
+
+.skill-filter-tag.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Card Skills Display */
+.card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.skill-tag {
+    padding: 5px 12px;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--primary-color);
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card:hover .skill-tag {
+    background: rgba(56, 189, 248, 0.25);
+    transform: scale(1.05);
+}
+
 /* Search Bar */
 #searchInput {
     flex: 1;
@@ -2017,6 +2116,16 @@ html {
     .footer {
         padding: 30px 15px;
         margin-top: 50px;
+    }
+
+    /* Skill filter mobile */
+    .skill-filter-section {
+        padding: 15px;
+    }
+
+    .skill-filter-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
