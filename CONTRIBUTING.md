@@ -166,15 +166,24 @@ git push origin main
 - Avoid unnecessary animations
 - Ensure responsiveness across devices
 
-# Questions?
-If you have any questions about contributing, please:
+## ❓ Questions or Need Help?
 
-1.Check this guide and the README
+If you have any questions about contributing, please follow these steps:
 
-2.Search existing issues and discussions
+1. 📘 **Read the Contribution Guide and README**  
+   They cover most common questions and setup instructions.
 
-3.Create a new issue or discussion
+2. 🔍 **Search Existing Issues & Discussions**  
+   Your question may already be answered.
 
-4.Reach out to the maintainers
+3. 📝 **Open a New Issue or Start a Discussion**  
+   If you don’t find what you’re looking for, feel free to ask.
 
-Thank you for contributing to Dev-card-showcase! 🎉
+4. 🤝 **Reach Out to the Maintainers**  
+   We’re happy to help guide you.
+
+---
+
+Thank you for contributing to **Dev-card-showcase**! 🎉  
+Your support helps make this project better for everyone.
+
