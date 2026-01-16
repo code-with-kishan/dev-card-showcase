@@ -143,6 +143,53 @@
         gap: 12px;
       }
     }
+
+    /* Empty state styling */
+    .empty-state {
+      grid-column: 1 / -1;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-secondary);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .empty-state.visible {
+      display: flex;
+    }
+
+    .empty-state i {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      opacity: 0.6;
+      color: var(--text-primary);
+    }
+
+    .empty-state h3 {
+      font-size: 1.5rem;
+      margin: 0 0 8px;
+      color: var(--text-primary);
+    }
+
+    .empty-state p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -2330,42 +2377,49 @@
         <a href="https://github.com/omkarhole" target="_blank">Omkar</a>
       </div>
     </div>
-  </section>
-  <div class="project-card">
-    <h2>Event Countdown Timer ⏳</h2>
 
-    <p class="project-desc">
-      A modern and animated event countdown timer that lets users set an event name,
-      date, and time. Features include real-time countdown updates, pause/resume
-      control, reset functionality, visual warnings when time is low, and smooth
-      number animations.
-    </p>
-
-    <div class="project-tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Timer</span>
-      <span>Animations</span>
+    <!-- Empty State Message -->
+    <div id="noProjectsState" class="empty-state">
+      <i class="fas fa-search"></i>
+      <h3>No projects found</h3>
+      <p>Try changing your search or filters.</p>
     </div>
+    <div class="project-card">
+      <h2>Event Countdown Timer ⏳</h2>
 
-    <div class="project-links">
-      <a href="./projects/Event-Countdown-Timer/index.html" target="_blank">
-        <i class="fas fa-external-link-alt"></i> Live
-      </a>
-      <!-- Optional GitHub link -->
-      <!--
+      <p class="project-desc">
+        A modern and animated event countdown timer that lets users set an event name,
+        date, and time. Features include real-time countdown updates, pause/resume
+        control, reset functionality, visual warnings when time is low, and smooth
+        number animations.
+      </p>
+
+      <div class="project-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Timer</span>
+        <span>Animations</span>
+      </div>
+
+      <div class="project-links">
+        <a href="./projects/Event-Countdown-Timer/index.html" target="_blank">
+          <i class="fas fa-external-link-alt"></i> Live
+        </a>
+        <!-- Optional GitHub link -->
+        <!--
     <a href="https://github.com/your-github-username/event-countdown-timer" target="_blank">
       <i class="fab fa-github"></i> GitHub
     </a>
     -->
-    </div>
+      </div>
 
-    <div class="project-footer">
-      <span>By</span>
-      <a href="https://github.com/Sneha-Amballa" target="_blank">Amballa Sneha</a>
+      <div class="project-footer">
+        <span>By</span>
+        <a href="https://github.com/Sneha-Amballa" target="_blank">Amballa Sneha</a>
+      </div>
     </div>
-  </div>
+  </section>
 
 
   <!-- FOOTER -->
@@ -2450,6 +2504,7 @@
 
     // --- Core Filtering Function ---
     function runFilter(query, tech) {
+      let visibleCount = 0;
       projectCards.forEach((card) => {
         const title = card.querySelector("h2").innerText.toLowerCase();
         const tags = card.querySelector(".project-tags").innerText.toLowerCase();
@@ -2466,15 +2521,23 @@
         // Update visibility: matches both conditions?
         if (matchesSearch && matchesTech) {
           card.style.display = ""; // Defaults to grid or flex depending on CSS
+          visibleCount++;
         } else {
           card.style.display = "none";
         }
       });
+
+      // Show/Hide empty state
+      const emptyState = document.getElementById("noProjectsState");
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.add("visible");
+        } else {
+          emptyState.classList.remove("visible");
+        }
+      }
     }
   </script>
-</body>
-
-</html>
 </body>
 
 </html>
