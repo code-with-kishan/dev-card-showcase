@@ -836,13 +836,16 @@ document.addEventListener("DOMContentLoaded", () => {
             applyFilters();
         }
 
-        document.getElementById('clearSkills').addEventListener('click', () => {
-            selectedSkills.clear();
-            document.querySelectorAll('.skill-filter-tag').forEach(tag => {
-                tag.classList.remove('active');
+        const clearSkillsBtn = document.getElementById('clearSkills');
+        if (clearSkillsBtn) {
+            clearSkillsBtn.addEventListener('click', () => {
+                selectedSkills.clear();
+                document.querySelectorAll('.skill-filter-tag').forEach(tag => {
+                    tag.classList.remove('active');
+                });
+                applyFilters();
             });
-            applyFilters();
-        });
+        }
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', () => {
@@ -869,8 +872,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <script>
         // ----- TYPEWRITER LOOP -----
+        // ----- TYPEWRITER LOOP -----
         const typewriter = document.getElementById('typewriter');
-        if (!typewriter) return;
+        
+        if (typewriter) {
 
 
         const phrases = [
@@ -916,6 +921,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Start typewriter
         type();
+        }
 
 
         // ----- PARALLAX EFFECT -----
@@ -1019,7 +1025,9 @@ document.addEventListener("DOMContentLoaded", () => {
             function step(timestamp) {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.innerText = Math.floor(progress * (end - start) + start);
+                if (element) {
+                     element.innerText = Math.floor(progress * (end - start) + start);
+                }
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }

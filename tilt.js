@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const dropZone = document.getElementById('dropZone');
+    if (!dropZone) return; // Exit if dropZone doesn't exist on this page
+
     const fileInput = document.getElementById('fileInput');
     const previewContainer = document.getElementById('previewContainer');
     const previewImage = document.getElementById('imagePreview');

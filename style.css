@@ -57,6 +57,7 @@
     --navbar-gradient-bottom: rgba(37, 62, 104, 0.65);
     --navbar-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
+
 /* =========================================
    IMAGE UPLOADER STYLES
    ========================================= */
@@ -92,7 +93,8 @@
     overflow: hidden;
 }
 
-.drop-zone:hover, .drop-zone.drag-over {
+.drop-zone:hover,
+.drop-zone.drag-over {
     border-color: var(--primary-color);
     background: rgba(56, 189, 248, 0.05);
 }
@@ -150,7 +152,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,7 +172,8 @@
     gap: 10px;
 }
 
-.remove-btn, .replace-btn {
+.remove-btn,
+.replace-btn {
     background: rgba(239, 68, 68, 0.1);
     color: #ef4444;
     border: 1px solid rgba(239, 68, 68, 0.2);
@@ -259,7 +262,8 @@ body.light-mode {
 
     --navbar-gradient-bottom: rgba(255, 255, 255, 0.8);
     --navbar-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 8px rgba(0, 0, 0, 0.04);
-    --glass-border: rgba(0, 0, 0, 0.05); /* Softer border for light mode */
+    --glass-border: rgba(0, 0, 0, 0.05);
+    /* Softer border for light mode */
 }
 
 /* =========================================
@@ -328,7 +332,8 @@ body::before {
     max-width: 1400px;
     margin: 0 auto 40px auto;
     transition: all 0.3s ease;
-    box-shadow: var(--navbar-shadow); /* Uses the new shadow variable */
+    box-shadow: var(--navbar-shadow);
+    /* Uses the new shadow variable */
 }
 
 /* Update hover to keep the shadow looking good */
@@ -339,7 +344,8 @@ body::before {
 /* Fix for Navbar links in Light Mode */
 body.light-mode .nav-links a {
     color: var(--text-primary);
-    font-weight: 600; /* Slightly bolder for readability */
+    font-weight: 600;
+    /* Slightly bolder for readability */
 }
 
 body.light-mode .nav-logo {
@@ -1018,27 +1024,173 @@ body.light-mode .random-btn:hover {
     border-radius: 20px;
 }
 
-/* Fix for glass effect to ensure text readability in light theme */
+/* MODERN SYMMETRIC THEME - Clean, Rounded, Premium */
 body.light-mode .card {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(2, 132, 199, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    /* Shiny Silver Background - High Contrast */
+    background: linear-gradient(135deg, #E0E0E0 0%, #FFFFFF 45%, #E0E0E0 55%, #C0C0C0 100%) !important;
+    border-radius: 30px;
+    /* Large rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    /* Bright border for metallic edge */
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15),
+        inset 0 0 15px rgba(255, 255, 255, 1);
+    /* Strong inner shine */
+    padding: 24px;
+    /* Reduced padding for framed look */
+    text-align: center;
+    /* CENTER ALIGNED */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Align flex items to center */
+    backdrop-filter: none;
+    /* Clean white, no glass effect needed */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
-/* Ensure text is properly contrasted in light theme */
+body.light-mode .card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Image - Prominent Squircle */
+body.light-mode .card-img {
+    width: 200px;
+    /* Larger image */
+    height: 200px;
+    border-radius: 20px;
+    /* Squircle shape */
+    border: none;
+    box-shadow: none;
+    /* Clean, flat image or specific style from ref */
+    margin-bottom: 20px;
+    object-fit: cover;
+    background: #f1f5f9;
+    /* Placeholder bg */
+    padding: 0;
+}
+
+/* Typography */
 body.light-mode .card h2 {
-    color: var(--text-primary);
-}
-
-body.light-mode .card p {
-    color: var(--text-secondary);
+    color: #111827;
+    /* Dark text */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+    /* Center align */
+    width: 100%;
 }
 
 body.light-mode .card .role {
-    color: var(--primary-color);
-    background: rgba(2, 132, 199, 0.1);
-    border: 1px solid rgba(2, 132, 199, 0.3);
+    color: #111827;
+    /* Dark text for Name/Title feel or Primary color */
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center align */
+    gap: 6px;
+    margin: 0 0 10px 0;
+    /* Remove auto margins */
+    text-align: center;
+    text-transform: none;
+    width: 100%;
+    /* Natural case */
+    letter-spacing: normal;
+}
+
+/* Add a verified icon simulation if not present in HTML, 
+   or just style the existing role to look clean */
+body.light-mode .card .role::after {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: #059669;
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+body.light-mode .card p {
+    color: #6B7280;
+    /* Gray description */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    text-align: center;
+    /* Center align */
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Buttons - Minimalist Pill */
+body.light-mode .card-btn {
+    background: #f3f4f6;
+    /* Light gray background */
+    color: #111827;
+    /* Dark text */
+    border: none;
+    border-radius: 50px;
+    /* Pill shape */
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+body.light-mode .card-btn:hover {
+    background: #e5e7eb;
+    /* Slightly darker gray on hover */
+    transform: scale(1.05);
+    color: #000;
+    box-shadow: none;
+}
+
+body.light-mode .card-btn::before {
+    display: none;
+    /* Remove gradient wipe */
+}
+
+body.light-mode .card-btn::after {
+    content: '+';
+    /* Plus sign instead of arrow */
+    margin-left: 5px;
+    font-size: 1.1em;
+    transform: none;
+    opacity: 1;
+}
+
+/* Remove decorative elements that clash with clean style */
+body.light-mode .card::before,
+body.light-mode .card::after {
+    display: none;
+}
+
+/* Share button symmetry */
+body.light-mode .card-buttons {
+    justify-content: center;
+}
+
+body.light-mode .share-btn {
+    background: #f3f4f6;
+    color: #111827;
+    border: none;
+    border-radius: 50px;
+}
+
+body.light-mode .share-btn:hover {
+    background: #e5e7eb;
 }
 
 /* Shimmer effect - only on hover */
@@ -1686,10 +1838,12 @@ body.light-mode .share-btn:hover {
 }
 
 @keyframes ayushGlow {
+
     0%,
     100% {
         box-shadow: var(--shadow-lg), 0 0 30px rgba(236, 72, 153, 0.3);
     }
+
     50% {
         box-shadow: var(--shadow-lg), 0 0 50px rgba(236, 72, 153, 0.6), 0 0 70px rgba(139, 92, 246, 0.4);
     }
@@ -2432,12 +2586,14 @@ html {
 
 /* Light Theme Fix */
 .light-theme .code-block {
-    background: #f8fafc;            /* light background */
+    background: #f8fafc;
+    /* light background */
     border: 1px solid #e2e8f0;
 }
 
 .light-theme .code-block code {
-    color: #0f172a;                 /* dark readable text */
+    color: #0f172a;
+    /* dark readable text */
 }
 
 
@@ -2787,27 +2943,27 @@ body.light-mode .card-container.list-view .role {
         gap: 15px;
         padding: 20px;
     }
-    
+
     .card-container.list-view .card {
         min-height: 170px;
         padding: 15px;
     }
-    
+
     .card-container.list-view .card-img {
         width: 80px;
         height: 80px;
         margin-right: 15px;
     }
-    
+
     .card-container.list-view h2 {
         font-size: 1.2rem;
     }
-    
+
     .card-container.list-view p {
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
     }
-    
+
     .card-container.list-view .card-btn {
         min-width: 110px;
         padding: 7px 15px;
@@ -2821,38 +2977,38 @@ body.light-mode .card-container.list-view .role {
         gap: 12px;
         padding: 15px;
     }
-    
+
     .card-container.list-view .card {
         min-height: 160px;
         padding: 15px;
     }
-    
+
     .card-container.list-view .card-img {
         width: 70px;
         height: 70px;
         margin-right: 15px;
     }
-    
+
     .card-container.list-view h2 {
         font-size: 1.1rem;
     }
-    
+
     .card-container.list-view .role {
         font-size: 0.75rem;
         padding: 3px 10px;
     }
-    
+
     .card-container.list-view p {
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
         margin: 8px 0 12px 0;
     }
-    
+
     .card-container.list-view .card-actions {
         flex-wrap: wrap;
         gap: 8px;
     }
-    
+
     .card-container.list-view .card-btn {
         min-width: 100px;
         padding: 6px 12px;
@@ -2867,32 +3023,32 @@ body.light-mode .card-container.list-view .role {
         min-height: auto;
         padding: 20px;
     }
-    
+
     .card-container.list-view .card-inner {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .card-container.list-view .card-img {
         margin: 0 auto 15px auto;
     }
-    
+
     .card-container.list-view .card-header {
         flex-direction: column;
         align-items: center;
         gap: 8px;
         margin-bottom: 12px;
     }
-    
+
     .card-container.list-view .card-content {
         text-align: center;
     }
-    
+
     .card-container.list-view .card-actions {
         justify-content: center;
         margin-top: 15px;
     }
-    
+
     .card-container.list-view .card-btn {
         min-width: 90px;
         padding: 8px 15px;
@@ -2940,11 +3096,11 @@ body.light-mode .card-container.list-view .role {
 }
 
 /* When in list view, show list icon */
-.card-container.list-view ~ .search-filter-container .view-toggle-btn .fa-list {
+.card-container.list-view~.search-filter-container .view-toggle-btn .fa-list {
     display: inline;
 }
 
-.card-container.list-view ~ .search-filter-container .view-toggle-btn .fa-th-large {
+.card-container.list-view~.search-filter-container .view-toggle-btn .fa-th-large {
     display: none;
 }
 
@@ -2968,6 +3124,7 @@ body.light-mode .card-container.list-view .role {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2978,6 +3135,7 @@ body.light-mode .card-container.list-view .role {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -3133,9 +3291,9 @@ body.light-mode .card-container.list-view .role {
     -webkit-backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    
+
     /* Ensure text is readable */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Light mode specific glass adjustments if needed */
@@ -3146,21 +3304,39 @@ body.light-mode .card {
 }
 
 /* Inner elements spacing for 3D effect */
-.card h2, .card img, .card .role, .card p, .card .card-btn {
+.card h2,
+.card img,
+.card .role,
+.card p,
+.card .card-btn {
     /* Ensure they are on their own layer for z-index/3d */
-    position: relative; 
+    position: relative;
     transition: transform 0.1s ease;
 }
 
 .card img {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.social-links a[aria-label="Instagram"]:hover { color: #e1306c; }
-.social-links a[aria-label="Facebook"]:hover { color: #1877f2; }
-.social-links a[aria-label="LinkedIn"]:hover { color: #0a66c2; }
-.social-links a[aria-label="GitHub"]:hover { color: #fff; }
-.social-links a[aria-label="Twitter"]:hover { color: #1da1f2; }
+.social-links a[aria-label="Instagram"]:hover {
+    color: #e1306c;
+}
+
+.social-links a[aria-label="Facebook"]:hover {
+    color: #1877f2;
+}
+
+.social-links a[aria-label="LinkedIn"]:hover {
+    color: #0a66c2;
+}
+
+.social-links a[aria-label="GitHub"]:hover {
+    color: #fff;
+}
+
+.social-links a[aria-label="Twitter"]:hover {
+    color: #1da1f2;
+}
 
 /* =========================================
    WELCOME MESSAGE
@@ -3170,7 +3346,8 @@ body.light-mode .card {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: rgba(30, 41, 59, 0.9); /* Dark theme default */
+    background: rgba(30, 41, 59, 0.9);
+    /* Dark theme default */
     color: #fff;
     padding: 15px 30px;
     border-radius: 50px;
@@ -3495,19 +3672,19 @@ body.light-mode .welcome-message {
     .guideline-card.overview {
         padding: 30px 20px;
     }
-    
+
     .section-title {
         font-size: 1.6rem;
     }
-    
+
     .guidelines-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .template-card {
         padding: 20px;
     }
-    
+
     .reference-grid {
         grid-template-columns: 1fr;
     }
@@ -3519,11 +3696,11 @@ body.light-mode .welcome-message {
         align-items: flex-start;
         gap: 10px;
     }
-    
+
     .guideline-item {
         padding: 20px;
     }
-    
+
     .template-card h2 {
         font-size: 1.5rem;
     }
@@ -3605,7 +3782,8 @@ body.light-mode .welcome-message {
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-width: 0; /* Prevent overflow */
+    min-width: 0;
+    /* Prevent overflow */
 }
 
 /* Name and role container */
@@ -3681,11 +3859,11 @@ body.light-mode .welcome-message {
 }
 
 /* Fix for cards without card-inner wrapper */
-.card-container.list-view .card > .card-img:first-child {
+.card-container.list-view .card>.card-img:first-child {
     margin-right: 20px;
 }
 
-.card-container.list-view .card > h2:first-of-type {
+.card-container.list-view .card>h2:first-of-type {
     margin-top: 0;
 }
 
@@ -3719,27 +3897,27 @@ body.light-mode .card-container.list-view .role {
         gap: 15px;
         padding: 20px;
     }
-    
+
     .card-container.list-view .card {
         min-height: 170px;
         padding: 15px;
     }
-    
+
     .card-container.list-view .card-img {
         width: 80px;
         height: 80px;
         margin-right: 15px;
     }
-    
+
     .card-container.list-view h2 {
         font-size: 1.2rem;
     }
-    
+
     .card-container.list-view p {
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
     }
-    
+
     .card-container.list-view .card-btn {
         min-width: 110px;
         padding: 7px 15px;
@@ -3753,38 +3931,38 @@ body.light-mode .card-container.list-view .role {
         gap: 12px;
         padding: 15px;
     }
-    
+
     .card-container.list-view .card {
         min-height: 160px;
         padding: 15px;
     }
-    
+
     .card-container.list-view .card-img {
         width: 70px;
         height: 70px;
         margin-right: 15px;
     }
-    
+
     .card-container.list-view h2 {
         font-size: 1.1rem;
     }
-    
+
     .card-container.list-view .role {
         font-size: 0.75rem;
         padding: 3px 10px;
     }
-    
+
     .card-container.list-view p {
         font-size: 0.85rem;
         -webkit-line-clamp: 2;
         margin: 8px 0 12px 0;
     }
-    
+
     .card-container.list-view .card-actions {
         flex-wrap: wrap;
         gap: 8px;
     }
-    
+
     .card-container.list-view .card-btn {
         min-width: 100px;
         padding: 6px 12px;
@@ -3799,38 +3977,38 @@ body.light-mode .card-container.list-view .role {
         min-height: auto;
         padding: 20px;
     }
-    
+
     .card-container.list-view .card-img {
         margin: 0 auto 15px auto;
         width: 100px;
         height: 100px;
     }
-    
+
     .card-container.list-view .card-header {
         flex-direction: column;
         align-items: center;
         gap: 8px;
         margin-bottom: 12px;
     }
-    
+
     .card-container.list-view h2 {
         text-align: center;
     }
-    
+
     .card-container.list-view .card-content {
         text-align: center;
     }
-    
+
     .card-container.list-view p {
         text-align: center;
         -webkit-line-clamp: 3;
     }
-    
+
     .card-container.list-view .card-actions {
         justify-content: center;
         margin-top: 15px;
     }
-    
+
     .card-container.list-view .card-btn {
         min-width: 90px;
         padding: 8px 15px;
@@ -3876,11 +4054,11 @@ body.light-mode .card-container.list-view .role {
 }
 
 /* When in list view, show grid icon */
-.card-container.list-view ~ .search-filter-container .view-toggle-btn .fa-list {
+.card-container.list-view~.search-filter-container .view-toggle-btn .fa-list {
     display: none;
 }
 
-.card-container.list-view ~ .search-filter-container .view-toggle-btn .fa-th-large {
+.card-container.list-view~.search-filter-container .view-toggle-btn .fa-th-large {
     display: inline;
 }
 
@@ -3903,10 +4081,12 @@ body.light-mode .card-container.list-view .role {
 }
 
 @keyframes SRDGlow {
+
     0%,
     100% {
         box-shadow: var(--shadow-lg), 0 0 30px rgba(40, 239, 63, 0.6);
     }
+
     50% {
         box-shadow: var(--shadow-lg), 0 0 50px rgba(40, 239, 63, 0.6), 0 0 70px rgba(40, 239, 63, 0.6);
     }
@@ -3923,6 +4103,7 @@ body.light-mode .card-container.list-view .role {
         box-shadow: var(--shadow-lg), 0 0 50px rgba(40, 239, 63, 0.6);
     }
 }
+
 .scard-img {
     width: 140px;
     height: 140px;
