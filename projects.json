@@ -1502,6 +1502,25 @@
     "name": "PavanKarthik",
     "github": "https://github.com/pavanakarthik12"
   }
+},
+{
+  "title": "Healthy Study Habits Checklist ✅",
+  "description": "An interactive checklist that helps students track and build healthy study habits.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Productivity",
+    "Student Wellness"
+  ],
+  "links": {
+    "live": "./projects/healthy-study-habits-checklist/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/your-github-username"
+  }
 }
+
 
 ]
