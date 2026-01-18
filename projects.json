@@ -1721,5 +1721,25 @@
     "name": "PavanKarthik",
     "github": "https://github.com/pavanakarthik12"
   }
+},
+{
+  "title": "Spot the Mistake 🔍",
+  "description": "A visual challenge where users find logical or UI mistakes between similar layouts.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game",
+    "Brain Training",
+    "UI Awareness"
+  ],
+  "links": {
+    "live": "./projects/spot-the-mistake-game/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/your-github-username"
+  }
 }
+
 ]
