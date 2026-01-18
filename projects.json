@@ -260,6 +260,23 @@
                    }
     },
     {
+    "title": "Daily Planner",
+    "description": "A simple and user-friendly daily planner that allows users to create, manage, and track tasks for a single day. It supports marking tasks as completed or pending and provides a one-click daily reset for a fresh start, helping users practice basic CRUD operations and frontend state management.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "links": {
+        "live": "./projects/daily-planner/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+    },
+
+    {
         "title":  "Basket Ball Game",
         "description":  "A 3D basketball shooting game built with Three.js and Cannon.js where players can aim and shoot basketballs into a hoop, keeping track of their score and time.",
         "tags":  [
