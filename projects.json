@@ -1520,6 +1520,17 @@
   }
 },
 {
+  "title": "Study–Rest Balance Guide ⚖️",
+  "description": "A visual guide that explains the importance of balancing study time with proper rest and recovery.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "Education",
+    "Student Wellness",
+    "UI Design"
+  ],
+  "links": {
+    "live": "./projects/study-rest-balance-guide/index.html"
   "title": "Productivity Self-Assessment Quiz 📊",
   "description": "An interactive quiz that helps users evaluate productivity habits and identify areas for improvement.",
   "title": "Study Breaks & Focus Techniques 🧠",
