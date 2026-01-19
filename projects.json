@@ -33,6 +33,22 @@
                    }
     },
     {
+        "title": "Event Reminder",
+        "description": "A smart utility that helps users create, manage, and track upcoming events in one place. It highlights today’s, upcoming, and overdue events while using LocalStorage to ensure reminders persist across sessions.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/event-reminder/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+    }
+    },
+    {
         "title":  "Word Memory Game",
         "description":  "Word Memory Game is an engaging web application that challenges players to memorize and recall words within a time limit. It enhances vocabulary and memory skills through multiple levels of difficulty and interactive gameplay.",
         "tags":  [
@@ -1641,16 +1657,30 @@
     "github": "https://github.com/your-github-username"
   }
 },
-
 {
-  "title": "Decision Consequences Simulator ⚖️",
-  "description": "An interactive system showing consequences of user decisions across real-life scenarios.",
+  "title": "Burnout Risk Indicator 🌿",
+  "description": "A simple tool that estimates burnout risk based on daily lifestyle habits.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Wellness",
+    "Awareness",
+    "Education"
+  ],
+  "links": {
+    "live": "./projects/burnout-risk-indicator/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/your-github-username"
+  }
+}
+
 {
   "title": "Interactive History Timeline 🕰️",
   "description": "An interactive timeline to explore historical eras with facts and mini quizzes.",
-  "title": "LearnXO",
-  "description": "LearnXO is an interactive educational web project designed to help users learn concepts through structured lessons, quizzes, and simple visual explanations using pure HTML, CSS, and JavaScript.",
-  "tags": [
+   "tags": [
     "HTML",
     "CSS",
     "JavaScript",
@@ -1704,18 +1734,24 @@
     "name": "Sneha Amballa",
     "github": "https://github.com/your-github-username"
   }
-}
+},
+
 
 ]
     "Interactive Learning"
+{
+    "title":"Interactive Learning",
+     "description": "An interactive simulator that demonstrates the consequences of various decisions in real-life scenarios, helping users understand cause and effect relationships.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Education",
+    "Reflection",
+    "UI/UX"
   ],
   "links": {
     "live": "./projects/decision-consequences-simulator/index.html"
-  },
-  "author": {
-    "name": "Sneha Amballa",
-    "github": "https://github.com/your-github-username"
-    "live": "./projects/LearnXO/index.html"
   },
   "author": {
     "name": "PavanKarthik",
@@ -1723,8 +1759,28 @@
   }
 },
 {
+  "title": "Swarmpath",
+  "description": "Swarmpath is an interactive web-based visualization inspired by swarm intelligence and path exploration. It showcases how simple agents collectively discover efficient paths through dynamic environments using real-time visual feedback.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Visualization",
+    "Algorithms"
+  ],
+  "links": {
+    "live": "./projects/Swarmpath/index.html"
+  },
+  "author": {
+    "name": "Karthik",
+    "github": "https://github.com/pavanakarthik12"
+  }
+},
+{
   "title": "Silent Animation Guessing Game 🎞️",
   "description": "A visual guessing game where users interpret silent animations and identify the situation.",
+  "title": "Movie Drawing Guess Game 🎬🎨",
+  "description": "A Pictionary-style game where players draw a movie and others guess it.",
   "tags": [
     "HTML",
     "CSS",
@@ -1739,6 +1795,20 @@
   "author": {
     "name": "Sneha Amballa",
     "github": "https://github.com/your-github-username"
+  }
+}
+
+]
+    "Game",
+    "Canvas",
+    "Entertainment"
+  ],
+  "links": {
+    "live": "./projects/movie-drawing-guess-game/index.html"
+  },
+  "author": {
+    "name": "Sneha Amballa",
+    "github": "https://github.com/Sneha-Amballa"
   }
 }
 
