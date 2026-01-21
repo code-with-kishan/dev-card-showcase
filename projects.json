@@ -262,6 +262,24 @@
             "github": "https://github.com/your-github-username"
         }
     },
+
+        {
+    "title": "Asteroids — Advanced Edition",
+    "description": "A premium arcade-style Asteroids game showcasing vector-based physics, thrust and inertia mechanics, procedural asteroid shapes, particle explosions, wave progression, and smooth, skill-based gameplay built with pure web technologies.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "links": {
+        "live": "./projects/astroid-game/index.html"
+    },
+    "author": {
+        "name": "Priyanshu",
+        "github": "https://github.com/PriyanshuSingh00-hub"
+    }
+    },
+
     {
         "title": "Hangman Game",
         "description": "A classic Hangman game where players guess letters to reveal a hidden word before running out of attempts. Features multiple categories, hints, and a scoring system.",
@@ -4142,7 +4160,8 @@
             "github": "https://github.com/saiusesgithub"
         }
     },
- { "title": "RageClicker",
+{
+  "title": "RageClicker",
   "description": "RageClicker is a fast-paced clicking game that challenges users to test their reaction speed and endurance. It offers instant visual feedback and engaging interactions using pure HTML, CSS, and JavaScript.",
   "tags": [
     "HTML",
@@ -4190,9 +4209,39 @@
     "github": "https://github.com/pavanakarthik12"
   }
 },
-    {
-        "title": "ClipStream - Non-Linear Editor",
-        "description": "A browser-based non-linear video editing interface built with Vanilla JS. Features a multi-track magnetic timeline, playhead synchronization engine, keyframe graph editor, and project serialization.",
+{
+  "title": "PixelMotion – Sprite Animation Studio",
+  "description": "A professional-grade pixel art animation studio in the browser. Features a multi-track timeline sequencer, customizable onion skinning engine, advanced drawing tools, and sprite sheet export capabilities.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "links": {
+    "live": "./projects/pixelmotion/index.html"
+  },
+  "author": {
+    "name": "PavanKarthik",
+    "github": "https://github.com/pavanakarthik12"
+  }
+},
+{
+  "title": "ClipStream – Non-Linear Editor",
+  "description": "A browser-based non-linear video editing interface built with Vanilla JavaScript. Features a multi-track magnetic timeline, playhead synchronization engine, keyframe graph editor, and project serialization.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "links": {
+    "live": "./projects/clipstream/index.html"
+  },
+  "author": {
+    "name": "PavanKarthik",
+    "github": "https://github.com/pavanakarthik12"
+  }
+}
+
         "tags": [
             "HTML",
             "CSS",
@@ -4239,6 +4288,8 @@
 {
   "title": "instinctengine",
   "description": "instinctengine is an interactive simulation that demonstrates instinct-based decision making. It shows how simple reactive rules can produce complex behavior using pure HTML, CSS, and JavaScript.",
+  "title": "voidrun",
+  "description": "voidrun is a fast-paced endless runner game set in a minimal void environment. It challenges players to react quickly and survive increasing difficulty using pure HTML, CSS, and JavaScript.",
   "tags": [
     "HTML",
     "CSS",
@@ -4248,6 +4299,11 @@
   ],
   "links": {
     "live": "./projects/instinctengine/index.html"
+    "Game",
+    "Endless Runner"
+  ],
+  "links": {
+    "live": "./projects/voidrun/index.html"
   },
   "author": {
     "name": "PavanKarthik",
