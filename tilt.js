@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card:not([data-tilt='false'])");
   
     cards.forEach((card) => {
       // Add transition for smooth reset
-      card.style.transition = "transform 0.1s ease";
+    card.style.transition = "transform 0.25s ease";
 
       const cardInner = card.querySelector('.card-inner'); // If exists
       const title = card.querySelector('h2');
@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const mouseX = (x - centerX) / centerX;
         const mouseY = (y - centerY) / centerY;
   
-        const maxRotate = 15; // Increased rotation for more drama
+        const maxRotate = 6; // subtle rotation for gentle tilt
   
         const rotateX = -mouseY * maxRotate; 
         const rotateY = mouseX * maxRotate;
   
         // Apply rotation to card
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
         
         // Glare logic
         let glare = card.querySelector('.card-glare');
