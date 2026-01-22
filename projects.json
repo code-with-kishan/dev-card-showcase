@@ -4379,6 +4379,21 @@
   }
 },
 {
+    "title": "neuromaze",
+    "description": "NeuroMaze is an interactive maze-solving simulation inspired by neural and adaptive behavior.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Neural Network",
+        "Maze"
+    ],
+    "links": {
+        "live": "./projects/neuromaze/index.html"
+    },
+    "author": {
+        "name": "PavanKarthik",
+        "github": "https://github.com/pavanakarthik12"
     "title":"stateflowjs",
     "description":"A JavaScript library for creating state machines. It provides a simple and intuitive way to define and work with state machines in your JavaScript applications.",
     "tags":[
