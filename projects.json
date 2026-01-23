@@ -4926,6 +4926,26 @@
         "name": "Gupta-02",
         "github": "https://github.com/Gupta-02"
     }
+},
+{
+    "title": "Balloon Rise",
+    "description": "Guide a balloon upward in this vertical scroller with gentle physics. Hold space or tap to rise, use arrow keys to drift laterally, and avoid spikes and wind gusts while reaching new heights.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Game",
+        "Canvas",
+        "Physics",
+        "Vertical Scroller"
+    ],
+    "links": {
+        "live": "./projects/balloon-rise/index.html"
+    },
+    "author": {
+        "name": "Gupta-02",
+        "github": "https://github.com/Gupta-02"
+    }
 }
 ]
 
