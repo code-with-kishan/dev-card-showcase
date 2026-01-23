@@ -663,6 +663,23 @@
         "github": "https://github.com/PriyanshuSingh00-hub"
     }
     },
+        {
+    "title": "Lunar Lander — Luxury Edition",
+    "description": "A premium physics-based Lunar Lander game featuring realistic gravity and thrust mechanics, smooth animations, particle effects, and a rich, glassmorphism-inspired user interface built with pure web technologies.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "links": {
+        "live": "./projects/Lunar-launcher/index.html"
+    },
+    "author": {
+        "name": "Priyanshu",
+        "github": "https://github.com/PriyanshuSingh00-hub"
+    }
+    },
+
 
     {
         "title": "Hangman Game",
