@@ -16,6 +16,22 @@
             "github": "https://github.com/Sneha-Amballa"
         }
     },
+            {
+        "title": "Physics Sandbox",
+        "description": "A physics simulation sandbox with interactive controls and visualizations.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/physics-sandbox/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
      {
         "title": "JSON Formattor",
         "description": "A utility tool to format and minify JSON data with a user-friendly interface and live preview.",
@@ -31,6 +47,22 @@
         "author": {
             "name": "Omkar",
             "github": "https://github.com/omkarhole"
+        }
+    },
+                {
+        "title": "Memory Game",
+        "description": "A classic memory card matching game with multiple themes and difficulty levels.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/memory-game/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
         }
     },
      {
