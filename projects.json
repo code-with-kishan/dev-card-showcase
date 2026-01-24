@@ -145,22 +145,24 @@
             "github": "https://github.com/omkarhole"
         }
     },
+       {
+        "title": "Virtual Keyboard",
+        "description": "An interactive virtual keyboard that allows users to type using on-screen keys, complete with visual feedback and support for multiple keyboard layouts.",
         {
-        "title": "Country Info App",
-        "description": "A web application that provides detailed information about countries worldwide. Users can search for countries, view their flags, capitals, populations, and other relevant data fetched from a public API.",
-        "tags": [
+              "tags": [
             "HTML",
             "CSS",
             "JavaScript"
         ],
         "links": {
-            "live": "./projects/country-info-app/index.html"
+            "live": "./projects/virtual-keyboard/index.html"
         },
         "author": {
-            "name": "Neeru",
-            "github": "https://github.com/neeru24"
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+           
         }
-    },
+           },
     {
         "title": "Memory Game",
         "description": "A classic memory card matching game with multiple themes and difficulty levels.",
