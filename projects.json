@@ -5318,14 +5318,26 @@
     }
 },
 {
-    "title": "Retro Learning Arcade",
-    "description": "A retro-style learning arcade interface with mini educational games and a scoring system. Features logic puzzles, quick math challenges, and traffic rules quizzes in a pixel-themed arcade environment.",
+    "title": "Retro Snake Reloaded",
+    "description": "A retro-styled Snake game with pixel graphics, keyboard controls, and progressive difficulty. Inspired by classic Nokia Snake games with modern HTML5 Canvas implementation.",
+    "title": "AI-Style Image Captioner",
+    "description": "Upload an image and get a creative, AI-style caption generated for it. Features dynamic caption generation with templates and keywords.",
     "tags": [
         "HTML",
         "CSS",
         "JavaScript",
-        "Game",
-        "Educational"
+        "Canvas",
+        "Game"
+    ],
+    "links": {
+        "live": "./projects/Retro-Snake-Reloaded/index.html"
+    },
+    "author": {
+        "name": "Sneha Amballa",
+        "github": "https://github.com/Sneha-Amballa"
+        "Utility Tool",
+        "AI",
+        "Image"
     ],
     "links": {
         "live": "./projects/Retro-Learning-Arcade/index.html"
