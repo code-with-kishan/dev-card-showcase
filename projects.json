@@ -5428,5 +5428,21 @@
         "name": "Sneha Amballa",
         "github": "https://github.com/Sneha-Amballa"
     }
+},
+{
+    "title" : "javalitejs",
+    "description": "A JavaScript library for creating java-like classes and objects. It provides a simple and intuitive way to define and work with java-like classes and objects in your JavaScript applications.",
+    "tags": [
+        "JavaScript",
+        "Java-like Classes",
+        "Library"
+    ],
+    "links": {
+        "live": "./projects/javalitejs/index.html"
+    },
+    "author": {
+        "name": "PavanKarthik",
+        "github": "https://github.com/pavanakarthik12"
+    }
 }
 ]
