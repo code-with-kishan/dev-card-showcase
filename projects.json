@@ -1955,6 +1955,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+     {
+        "title": "motion Engine Lab",
+        "description": "A web application that allows users to create and simulate various motion effects using physics principles like gravity, friction, and acceleration.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/motion-engine-lab/index.html"
+        },
+        "author": {
+            "name": "omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Virtual Control Pannel",
         "description": "A virtual control panel that simulates various controls like buttons, switches, and sliders for interactive user experiences.",
