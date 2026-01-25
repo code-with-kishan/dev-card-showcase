@@ -871,6 +871,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+        {
+        "title": "Spot the Difference Game",
+        "description": "A fun and challenging game where players must find differences between two similar images within a time limit. Features multiple levels and score tracking.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/SpotDifference/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
     {
         "title": "Mini Geo Guesser",
         "description": "A fun game where you have to guess a location off of famous landscape pictures shown to you along with some hints ",
@@ -917,6 +933,22 @@
         "author": {
             "name": "Priyanshu",
             "github": "https://github.com/PriyanshuSingh00-hub"
+        }
+    },
+            {
+        "title": "Periodic Table Quiz",
+        "description": "An interactive quiz game that tests users' knowledge of the periodic table. Features multiple-choice questions, score tracking, and a timer for added challenge.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/PeriodicTableQuiz/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
         }
     },
         {
@@ -5510,6 +5542,7 @@
     ],
     "links": {
         "live": "./projects/javalitejs/index.html"
+    },
     "title": "Livetypingaura",
     "description": "A live typing game where users must type a sentence as fast and accurately as possible. Features timer, scoring system, and typing accuracy calculation.",
     "tags": [
@@ -5524,6 +5557,7 @@
     "author": {
         "name": "Sneha Amballa",
         "github": "https://github.com/Sneha-Amballa"
+    },
     "title": "Djjs",
     "description": "A JavaScript library for creating DJ-style visualizations. It provides a simple and intuitive way to define and work with DJ-style visualizations in your JavaScript applications.",
     "tags": [
@@ -5549,6 +5583,18 @@
     ],
     "links": {
         "live": "./projects/businessjs/index.html"
+    
+},
+{
+    "title": "Rocketjs",
+    "description": "A JavaScript library for creating rocket animations. It provides a simple and intuitive way to define and work with rocket animations in your JavaScript applications.",
+    "tags": [
+        "JavaScript",
+        "Rocket Animation",
+        "Library"
+    ],
+    "links": {
+        "live": "./projects/rocketjs/index.html"
     },
     "author": {
         "name": "PavanKarthik",
