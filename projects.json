@@ -935,6 +935,22 @@
             "github": "https://github.com/PriyanshuSingh00-hub"
         }
     },
+            {
+        "title": "Periodic Table Quiz",
+        "description": "An interactive quiz game that tests users' knowledge of the periodic table. Features multiple-choice questions, score tracking, and a timer for added challenge.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/PeriodicTableQuiz/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
         {
     "title": "Lunar Lander — Luxury Edition",
     "description": "A premium physics-based Lunar Lander game featuring realistic gravity and thrust mechanics, smooth animations, particle effects, and a rich, glassmorphism-inspired user interface built with pure web technologies.",
