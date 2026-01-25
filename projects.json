@@ -1,5 +1,23 @@
 [
     {
+        "title": "Retro Learning Arcade",
+        "description": "A retro-style learning arcade interface with mini educational games including math challenges, logic puzzles, and traffic rules quizzes. Features pixel fonts, scoring system, and gamified learning experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Educational",
+            "Game"
+        ],
+        "links": {
+            "live": "./arcade.html"
+        },
+        "author": {
+            "name": "Sneha Amballa",
+            "github": "https://github.com/Sneha-Amballa"
+        }
+    },
+    {
         "title": "Symon Says Game",
         "description": "A fun and interactive memory game where players must repeat increasingly complex sequences of colors and sounds. Features multiple difficulty levels, score tracking, and engaging animations.",
         "tags": [
