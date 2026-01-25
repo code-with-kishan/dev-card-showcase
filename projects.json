@@ -692,6 +692,22 @@
         }
     },
         {
+        "title": "Study Timer",
+        "description": "A Pomodoro-style study timer that helps users focus on tasks with timed intervals of work and breaks.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/StudyTimer/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
+        {
         "title": "Catch the Ball Game",
         "description": "An exciting game where players control a basket to catch falling balls while avoiding obstacles. Features increasing difficulty levels, score tracking, and engaging gameplay.",
         "tags": [
