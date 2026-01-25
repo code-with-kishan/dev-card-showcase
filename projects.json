@@ -49,6 +49,8 @@
         "author": {
             "name": "Omkar",
             "github": "https://github.com/omkarhole"
+        }
+    },
         {
         "title": "Pet Name Generator",
         "description": "A fun web application that generates unique and creative pet names based on user-selected criteria such as pet type, personality traits, and themes.",
@@ -166,7 +168,6 @@
        {
         "title": "Virtual Keyboard",
         "description": "An interactive virtual keyboard that allows users to type using on-screen keys, complete with visual feedback and support for multiple keyboard layouts.",
-        {
               "tags": [
             "HTML",
             "CSS",
@@ -495,6 +496,22 @@
         "author": {
             "name": "Neeru",
             "github": "https://github.com/neeru24"
+        }
+    },
+    {
+        "title": "Git visualizer",
+        "description": "A web application that visualizes Git commands and workflows through interactive diagrams and animations, helping users understand version control concepts.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/git-visualizer/index.html"
+        },
+        "author": {
+            "name": "CodeMaster",
+            "github": "https://github.com/CodeMaster"
         }
     },
     {
@@ -5402,8 +5419,6 @@
 },{
     "title": "Retro Snake Reloaded",
     "description": "A retro-styled Snake game with pixel graphics, keyboard controls, and progressive difficulty. Inspired by classic Nokia Snake games with modern HTML5 Canvas implementation.",
-    "title": "AI-Style Image Captioner",
-    "description": "Upload an image and get a creative, AI-style caption generated for it. Features dynamic caption generation with templates and keywords.",
     "tags": [
         "HTML",
         "CSS",
@@ -5413,16 +5428,6 @@
     ],
     "links": {
         "live": "./projects/Retro-Snake-Reloaded/index.html"
-    },
-    "author": {
-        "name": "Sneha Amballa",
-        "github": "https://github.com/Sneha-Amballa"
-        "Utility Tool",
-        "AI",
-        "Image"
-    ],
-    "links": {
-        "live": "./projects/Retro-Learning-Arcade/index.html"
     },
     "author": {
         "name": "Sneha Amballa",
@@ -5487,3 +5492,4 @@
     }
 }
 ]
+
