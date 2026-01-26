@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Hall of Fame (1).png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     
 </head>
@@ -52,7 +53,70 @@
     
     <!-- Page Loader -->
 
+
+
+    <!-- NAVBAR START -->
+  <nav class="navbar">
+  <div class="nav-left">
+    <div class="nav-logo">
+        Community
+    </div>
+  </div>
+
+  <ul class="nav-links">
+    <!-- Primary -->
+    <li><a href="index.html">
+        <i data-lucide="home"></i>
+        Home
+        
+    </a></li>
+    <li><a href="projects.html">
+        <i data-lucide="folder"></i>
+        Projects
+    <li><a href="contribute.html">
+        <i data-lucide="users"></i>
+        Contributer
+    </a></li>
+    <li><a href="statistics.html">
+        <i data-lucide="bar-chart-2"></i>
+        Stats
+    </a></li>
+    <li>
+      <a href="https://github.com/Jayanta2004/dev-card-showcase" target="_blank">
+        <i data-lucide="github"></i>
+        Github
+    </li>
+    <!-- Dropdown -->
+    <li class="dropdown">
+      <button class="drop-btn">
+        More ▾</button>
+      <ul class="dropdown-menu">
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guidelines.html">Guidelines</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="bug-report.html">Bug Report</a></li>
+        <li><a href="feature-request.html">Feature Request</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <div class="nav-right">
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+=======
 <div id="navbar"></div>
+
 
 
     <!-- NAVBAR END -->
@@ -957,6 +1021,9 @@
   
 
 
+    <script>
+        lucide.createIcons();
+    </script>
 
     <!--<script src="tilt.js"></script>-->
 
