@@ -176,6 +176,23 @@
         }
     },
      {
+        "title": "Contrast Checker Tool",
+        "description": "A web application that checks the contrast ratio between foreground and background colors to ensure accessibility compliance. It provides real-time feedback and suggestions for improving color combinations.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/contrast-checker/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
+     {
         "title": "Fading snake game",
         "description": "Simple Fading snake game.",
         "tags": [
