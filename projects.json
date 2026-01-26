@@ -121,7 +121,23 @@
         },
         "author": {
             "name": "Anvesha",
-            "github": "https://github.com/omkarhole"
+            "github": "https://github.com/your-github-username"
+        }
+    },
+    {
+        "title": "DeciWise - Smart Decision Maker",
+        "description": "A smart yes/no decision-making utility that helps users make thoughtful choices instead of random guesses. It analyzes the user's question using keyword-based logic and provides a clear decision along with a meaningful explanation, wrapped in a clean and modern UI.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/deciwise/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
         }
     },
       {
@@ -254,7 +270,7 @@
         },
         "author": {
             "name": "Omkar",
-            "github": "https://github.com/omkarhole"
+            "github": "https://github.com/your-github-username"
         }
     },
     {
