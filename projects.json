@@ -1,6 +1,25 @@
 [
     {
-        "title": "Island Builder",
+        "title": "Mech Arena Skirmish",
+        "description": "Pilot a mech in compact 3D battle arenas with modular mech combat. Features loadout selection, destructible cover, and cooldown skills for tactical combat in short sessions.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Game",
+            "3D",
+            "Three.js",
+            "Action",
+            "Strategy"
+        ],
+        "links": {
+            "live": "./projects/Mech-Arena-Skirmish/"
+        },
+        "author": {
+            "name": "Gupta",
+            "github": "https://github.com/Gupta-02"
+        }
+    },
         "description": "A cozy tile-placement strategy game where players build island paradises by strategically placing tiles to maximize adjacency scoring. Features random tile deck, turn-based gameplay, and beautiful island-building mechanics.",
         "tags": [
             "HTML",
