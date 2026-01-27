@@ -72,6 +72,23 @@
         }
     },
     {
+        "title": "Temperature Converter",
+        "description": "A visually driven temperature conversion tool featuring a climate dial interface. Converts Celsius to Fahrenheit and Kelvin in real time with dynamic UI feedback that adapts to temperature ranges, offering an intuitive and engaging user experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "UI/UX"
+        ],
+        "links": {
+            "live": "./projects/temperature-converter/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+        }
+},
+    {
         "title": "Gravity Golf",
         "description": "A physics-based puzzle golf game where players launch a ball around planets using gravity wells to reach the goal flag. Features slingshot mechanics, orbital trajectories, par scoring system, and progressive difficulty levels.",
         "tags": [
