@@ -3541,6 +3541,22 @@
             "github": "https://github.com/your-github-username"
         }
     },
+        {
+        "title": "Playing Card Preloader",
+        "description": "A visually appealing preloader animation featuring a deck of playing cards that shuffle and deal themselves, providing an engaging loading experience for web applications.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/PlayingCardPreloader/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Hangman Game",
         "description": "A classic Hangman game where players guess letters to reveal a hidden word before running out of attempts. Features multiple categories, hints, and a scoring system.",
