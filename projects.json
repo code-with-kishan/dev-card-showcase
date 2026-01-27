@@ -6288,6 +6288,18 @@
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Sky Fortress Defense",
+    "description": "Defend a floating base from air raids in this 3D tower defense game. Features 3D turret placement on rotatable platforms with altitude-based targeting.",
+    "tags": ["HTML", "CSS", "JavaScript", "Three.js", "Game", "3D", "Tower Defense", "Strategy"],
+    "links": {
+      "live": "./projects/Sky-Fortress-Defense/"
+    },
+    "author": {
+      "name": "Gupta-02",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
