@@ -1358,6 +1358,22 @@
         }
     },
     {
+        "title": "Self Destructing Notes",
+        "description": "A note-taking app where notes automatically delete after a set time, encouraging users to be more mindful of their digital footprint.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/Self-DestructingNotes/index.html"
+        },
+        "author": {
+            "name": "Neeru",
+            "github": "https://github.com/neeru24"
+        }
+    },
+    {
         "title": "GitHub PR Analyzer",
         "description": "A web application that analyzes GitHub Pull Requests by extracting key metrics from any public PR URL. It displays lines added/deleted, files changed, and calculates an estimated effort score with visual indicators.",
         "tags": [
