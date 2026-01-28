@@ -10,18 +10,17 @@ function loadHTML(id, file, callback) {
     function initThemeToggle() {
         const themeToggleBtn = document.getElementById("themeToggle");
         if (!themeToggleBtn) return;
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "light") {
-            document.body.classList.add("light-mode");
-            themeToggleBtn.textContent = "🌞";
-        }
-        else {
-            themeToggleBtn.textContent = "🌜";
-        }
+        
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.body.setAttribute("data-theme", savedTheme);
+        themeToggleBtn.textContent = savedTheme === "light" ? "🌞" : "🌙";
+        
         themeToggleBtn.addEventListener("click", () => {
-            const isLightMode = document.body.classList.toggle("light-mode");
-            localStorage.setItem("theme", isLightMode ? "light" : "dark");
-            themeToggleBtn.textContent = isLightMode ? "☀️" : "🌙";
+            const currentTheme = document.body.getAttribute("data-theme");
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.body.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            themeToggleBtn.textContent = newTheme === "light" ? "☀️" : "🌙";
         });
     }
 }
