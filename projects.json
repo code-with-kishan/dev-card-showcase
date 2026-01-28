@@ -264,6 +264,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+     {
+        "title": "Attention Drift Visulizer",
+        "description": "A web application that visualizes staggered animations in different directions. Users can select the direction and see how elements animate in a staggered manner.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/AttentionDriftVisualizer/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
         {
         "title": "365 Days ",
         "description": "A web application that displays a new motivational quote or fact each day for 365 days. Users can bookmark their favorite quotes and share them on social media.",
