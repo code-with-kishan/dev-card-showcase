@@ -1606,6 +1606,22 @@
             "github": "https://github.com/neeru24"
         }
     },
+     {
+        "title": "Carbon Choice comparator",
+        "description": "An application that compares the carbon footprints of different lifestyle choices to help users make eco-friendly decisions.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/carbon-choice/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
         {
         "title": "Magnetic Cursor Effect",
         "description": "An interactive web effect where elements are attracted to the cursor as it moves across the screen, creating a magnetic-like interaction. Features customizable attraction strength and element styles.",
