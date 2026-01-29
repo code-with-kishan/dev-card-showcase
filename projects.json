@@ -6893,19 +6893,19 @@
     }
   },
   {
-    "title": "Snowfall Screen Effect",
-    "description": "Animated snowflakes fall gently across the screen, enhancing visual appeal during winter or festive themes. Lightweight and non-intrusive animation using CSS keyframes and JS randomness.",
+    "title": "Dog Cursor Chaser",
+    "description": "A playful dog that runs after the mouse cursor, creating a fun and interactive experience.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
       "Animation",
-      "Winter",
-      "Festive",
-      "Visual Effect"
+      "Game",
+      "Interactive",
+      "Fun"
     ],
     "links": {
-      "live": "./projects/Snowfall-Screen-Effect/"
+      "live": "./projects/Dog-Cursor-Chaser/"
     },
     "author": {
       "name": "Gupta",
