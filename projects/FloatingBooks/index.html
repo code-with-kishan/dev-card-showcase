@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Books Library 📚</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0 40px;
+            position: relative;
+            z-index: 100;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: #f8f9fa;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b0b7c3;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .library-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .bookshelf {
+            flex: 3;
+            min-width: 300px;
+            height: 700px;
+            background: linear-gradient(to bottom, #2d2424 0%, #1a1616 100%);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 0 30px rgba(0, 0, 0, 0.8),
+                0 20px 50px rgba(0, 0, 0, 0.6);
+            border: 8px solid #3a2c2c;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .bookshelf::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(0, 0, 0, 0.1) 20px,
+                    rgba(0, 0, 0, 0.1) 22px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(0, 0, 0, 0.1) 20px,
+                    rgba(0, 0, 0, 0.1) 22px
+                );
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .shelf {
+            flex: 1;
+            background: linear-gradient(to bottom, #8b7355 0%, #6b5741 100%);
+            margin: 15px 0;
+            border-radius: 5px;
+            box-shadow: 
+                inset 0 5px 10px rgba(0, 0, 0, 0.5),
+                0 2px 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .shelf-label {
+            position: absolute;
+            top: -25px;
+            left: 10px;
+            color: #d4af37;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .floating-area {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .book {
+            position: absolute;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease, box-shadow 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            pointer-events: auto;
+        }
+
+        .book:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.3);
+            z-index: 100;
+        }
+
+        .book.open {
+            transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) scale(1.5) rotateY(-90deg);
+            z-index: 1000 !important;
+            pointer-events: auto;
+        }
+
+        .book-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 3px 8px 8px 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .book-spine {
+            position: absolute;
+            width: 15px;
+            height: 100%;
+            left: 0;
+            background: inherit;
+            transform-origin: left;
+            transform: rotateY(90deg);
+        }
+
+        .book-pages {
+            position: absolute;
+            width: calc(100% - 15px);
+            height: 100%;
+            left: 15px;
+            background: #f5f5dc;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow: hidden;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+            backface-visibility: hidden;
+        }
+
+        .book-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .book-author {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            padding: 10px 0;
+        }
+
+        .page-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .page-content h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .page-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .page-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .page-content li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .close-book {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #c0392b;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 1001;
+        }
+
+        .controls-panel {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(40, 40, 60, 0.85);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            z-index: 100;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .library-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .control-btn {
+            background: rgba(60, 60, 80, 0.8);
+            border: none;
+            border-radius: 10px;
+            padding: 15px 10px;
+            color: #e6f7ff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-5px);
+            background: rgba(80, 80, 100, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn.active {
+            background: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .control-btn i {
+            font-size: 1.8rem;
+        }
+
+        .slider-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b0c4de;
+            font-weight: 500;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #ffd700;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .book-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .info-author {
+            color: #b0c4de;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .info-description {
+            color: #f0f0f0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b0c4de;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #86a8e7;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1100px) {
+            .library-container {
+                flex-direction: column;
+            }
+            
+            .bookshelf {
+                height: 500px;
+            }
+            
+            .library-controls {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .library-controls {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .bookshelf {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .library-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book-open"></i> Floating Books Library 📚</h1>
+            <p class="subtitle">Click on any book to open it and read its contents. Books float gently and can be organized by genre.</p>
+        </header>
+        
+        <div class="library-container">
+            <div class="bookshelf">
+                <div class="shelf">
+                    <div class="shelf-label">Fiction</div>
+                </div>
+                <div class="shelf">
+                    <div class="shelf-label">Science</div>
+                </div>
+                <div class="shelf">
+                    <div class="shelf-label">History</div>
+                </div>
+                <div class="floating-area" id="floatingArea">
+                    <!-- Floating books will be generated here -->
+                </div>
+            </div>
+            
+            <div class="controls-panel">
+                <h2><i class="fas fa-cogs"></i> Library Controls</h2>
+                
+                <div class="library-controls">
+                    <button class="control-btn active" data-genre="all">
+                        <i class="fas fa-book"></i>
+                        <span>All Books</span>
+                    </button>
+                    <button class="control-btn" data-genre="fiction">
+                        <i class="fas fa-hat-wizard"></i>
+                        <span>Fiction</span>
+                    </button>
+                    <button class="control-btn" data-genre="science">
+                        <i class="fas fa-atom"></i>
+                        <span>Science</span>
+                    </button>
+                    <button class="control-btn" data-genre="history">
+                        <i class="fas fa-landmark"></i>
+                        <span>History</span>
+                    </button>
+                    <button class="control-btn" data-genre="fantasy">
+                        <i class="fas fa-dragon"></i>
+                        <span>Fantasy</span>
+                    </button>
+                    <button class="control-btn" data-genre="mystery">
+                        <i class="fas fa-search"></i>
+                        <span>Mystery</span>
+                    </button>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="floatSpeed"><i class="fas fa-tachometer-alt"></i> Float Speed</label>
+                    <input type="range" id="floatSpeed" min="1" max="10" value="5">
+                </div>
+                
+                <div class="slider-container">
+                    <label for="bookSize"><i class="fas fa-expand-alt"></i> Book Size</label>
+                    <input type="range" id="bookSize" min="1" max="10" value="5">
+                </div>
+                
+                <div class="book-info" id="bookInfo">
+                    <div class="info-title">Select a Book</div>
+                    <div class="info-author">Click on any floating book to see details here</div>
+                    <div class="info-description">This library contains books that float gently in the air. Each book can be opened by clicking on it to reveal its contents. Use the controls to filter by genre and adjust the animation.</div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="bookCount">12</div>
+                        <div class="stat-label">Books</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="openCount">0</div>
+                        <div class="stat-label">Opened</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Genres</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Floating Books Library &copy; 2023 | Click on any book to open it and explore its contents 📖</p>
+            <p>Books float with gentle animations and open to reveal detailed content when clicked.</p>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const floatingArea = document.getElementById('floatingArea');
+        const genreButtons = document.querySelectorAll('.control-btn');
+        const floatSpeedSlider = document.getElementById('floatSpeed');
+        const bookSizeSlider = document.getElementById('bookSize');
+        const bookInfo = document.getElementById('bookInfo');
+        const bookCountElement = document.getElementById('bookCount');
+        const openCountElement = document.getElementById('openCount');
+
+        // Configuration
+        let currentGenre = 'all';
+        let floatSpeed = 0.5;
+        let bookSizeMultiplier = 1;
+        let books = [];
+        let openCount = 0;
+        let currentOpenBook = null;
+
+        // Book data with titles, authors, descriptions, and genres
+        const bookData = [
+            {
+                id: 1,
+                title: "The Starless Sea",
+                author: "Erin Morgenstern",
+                genre: "fantasy",
+                color: "#8a2be2",
+                spineColor: "#6a1bb8",
+                content: {
+                    title: "The Starless Sea",
+                    author: "Erin Morgenstern",
+                    summary: "A timeless love story set in a secret underground world—a place of pirates, painters, lovers, liars, and ships that sail upon a starless sea.",
+                    chapters: [
+                        "The Sweetheart Sea",
+                        "The King of the Wild Things",
+                        "The Ballad of Simon and Eleanor",
+                        "The Owl King",
+                        "The Pirate and the Painter"
+                    ],
+                    description: "Zachary Ezra Rawlins is a graduate student in Vermont when he discovers a mysterious book hidden in the stacks. As he turns the pages, entranced by tales of lovelorn prisoners, key collectors, and nameless acolytes, he reads something strange: a story from his own childhood..."
+                }
+            },
+            {
+                id: 2,
+                title: "Sapiens",
+                author: "Yuval Noah Harari",
+                genre: "science",
+                color: "#1e90ff",
+                spineColor: "#1c86ee",
+                content: {
+                    title: "Sapiens: A Brief History of Humankind",
+                    author: "Yuval Noah Harari",
+                    summary: "From a renowned historian comes a groundbreaking narrative of humanity's creation and evolution that explores the ways in which biology and history have defined us.",
+                    chapters: [
+                        "The Cognitive Revolution",
+                        "The Agricultural Revolution",
+                        "The Unification of Humankind",
+                        "The Scientific Revolution"
+                    ],
+                    description: "One hundred thousand years ago, at least six different species of humans inhabited Earth. Yet today there is only one—homo sapiens. What happened to the others? And what may happen to us?"
+                }
+            },
+            {
+                id: 3,
+                title: "Pride and Prejudice",
+                author: "Jane Austen",
+                genre: "fiction",
+                color: "#dc143c",
+                spineColor: "#b22222",
+                content: {
+                    title: "Pride and Prejudice",
+                    author: "Jane Austen",
+                    summary: "A romantic novel of manners that depicts the emotional development of protagonist Elizabeth Bennet.",
+                    chapters: [
+                        "Chapter 1: The Bennet Family",
+                        "Chapter 2: The Arrival of Mr. Bingley",
+                        "Chapter 3: The Ball at Netherfield",
+                        "Chapter 4: The Proposal",
+                        "Chapter 5: The Truth About Mr. Darcy"
+                    ],
+                    description: "The story follows the main character Elizabeth Bennet as she deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of early 19th-century England."
+                }
+            },
+            {
+                id: 4,
+                title: "The Silent Patient",
+                author: "Alex Michaelides",
+                genre: "mystery",
+                color: "#2e8b57",
+                spineColor: "#228b22",
+                content: {
+                    title: "The Silent Patient",
+                    author: "Alex Michaelides",
+                    summary: "A psychological thriller about a woman who shoots her husband and then stops speaking.",
+                    chapters: [
+                        "Part One: Theo",
+                        "Part Two: Alicia",
+                        "Part Three: The Truth",
+                        "Epilogue"
+                    ],
+                    description: "Alicia Berenson's life is seemingly perfect. A famous painter married to an in-demand fashion photographer, she lives in a grand house with big windows overlooking a park in one of London's most desirable areas. One evening her husband Gabriel returns home late from a fashion shoot, and Alicia shoots him five times in the face, and then never speaks another word."
+                }
+            },
+            {
+                id: 5,
+                title: "A Brief History of Time",
+                author: "Stephen Hawking",
+                genre: "science",
+                color: "#20b2aa",
+                spineColor: "#1e9c95",
+                content: {
+                    title: "A Brief History of Time",
+                    author: "Stephen Hawking",
+                    summary: "A landmark volume in science writing by one of the great minds of our time, exploring profound questions of existence.",
+                    chapters: [
+                        "Our Picture of the Universe",
+                        "Space and Time",
+                        "The Expanding Universe",
+                        "The Uncertainty Principle",
+                        "Elementary Particles and the Forces of Nature"
+                    ],
+                    description: "Was there a beginning of time? Could time run backwards? Is the universe infinite or does it have boundaries? These are just some of the questions considered in an internationally acclaimed masterpiece which begins by reviewing the great theories of the cosmos from Newton to Einstein."
+                }
+            },
+            {
+                id: 6,
+                title: "The Hobbit",
+                author: "J.R.R. Tolkien",
+                genre: "fantasy",
+                color: "#daa520",
+                spineColor: "#b8860b",
+                content: {
+                    title: "The Hobbit",
+                    author: "J.R.R. Tolkien",
+                    summary: "A fantasy novel about the adventures of hobbit Bilbo Baggins in Middle-earth.",
+                    chapters: [
+                        "An Unexpected Party",
+                        "Roast Mutton",
+                        "A Short Rest",
+                        "Over Hill and Under Hill",
+                        "Riddles in the Dark"
+                    ],
+                    description: "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely travelling further than the pantry of his hobbit-hole in Bag End. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep to whisk him away on an adventure."
+                }
+            },
+            {
+                id: 7,
+                title: "The Guns of August",
+                author: "Barbara Tuchman",
+                genre: "history",
+                color: "#cd853f",
+                spineColor: "#a0522d",
+                content: {
+                    title: "The Guns of August",
+                    author: "Barbara Tuchman",
+                    summary: "A historical account of the first month of World War I.",
+                    chapters: [
+                        "Plans",
+                        "The Outbreak",
+                        "The Battle of the Frontiers",
+                        "Retreat",
+                        "The Marne"
+                    ],
+                    description: "In this landmark account, renowned historian Barbara Tuchman re-creates the first month of World War I: thirty days in the summer of 1914 that determined the course of the conflict, the century, and ultimately our present world."
+                }
+            },
+            {
+                id: 8,
+                title: "Dune",
+                author: "Frank Herbert",
+                genre: "science",
+                color: "#b22222",
+                spineColor: "#8b0000",
+                content: {
+                    title: "Dune",
+                    author: "Frank Herbert",
+                    summary: "A epic science fiction novel set in the distant future amidst a feudal interstellar society.",
+                    chapters: [
+                        "Book One: Dune",
+                        "Book Two: Muad'Dib",
+                        "Book Three: The Prophet",
+                        "Appendix"
+                    ],
+                    description: "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the 'spice' melange, a drug capable of extending life and enhancing consciousness."
+                }
+            },
+            {
+                id: 9,
+                title: "Murder on the Orient Express",
+                author: "Agatha Christie",
+                genre: "mystery",
+                color: "#4682b4",
+                spineColor: "#36648b",
+                content: {
+                    title: "Murder on the Orient Express",
+                    author: "Agatha Christie",
+                    summary: "A detective novel featuring the Belgian detective Hercule Poirot.",
+                    chapters: [
+                        "Part One: The Facts",
+                        "Part Two: The Evidence",
+                        "Part Three: Hercule Poirot Sits Back and Thinks"
+                    ],
+                    description: "Just after midnight, a snowstorm stops the Orient Express in its tracks. The luxurious train is surprisingly full for the time of the year, but by the morning it is one passenger fewer. An American tycoon lies dead in his compartment, stabbed a dozen times, his door locked from the inside."
+                }
+            },
+            {
+                id: 10,
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                genre: "fiction",
+                color: "#ff6347",
+                spineColor: "#ee5c42",
+                content: {
+                    title: "The Great Gatsby",
+                    author: "F. Scott Fitzgerald",
+                    summary: "A novel about the American dream and the roaring twenties.",
+                    chapters: [
+                        "Chapter 1",
+                        "Chapter 2",
+                        "Chapter 3",
+                        "Chapter 4",
+                        "Chapter 5",
+                        "Chapter 6",
+                        "Chapter 7",
+                        "Chapter 8",
+                        "Chapter 9"
+                    ],
+                    description: "The Great Gatsby, F. Scott Fitzgerald's third book, stands as the supreme achievement of his career. This exemplary novel of the Jazz Age has been acclaimed by generations of readers."
+                }
+            },
+            {
+                id: 11,
+                title: "A People's History",
+                author: "Howard Zinn",
+                genre: "history",
+                color: "#5f9ea0",
+                spineColor: "#4f8688",
+                content: {
+                    title: "A People's History of the United States",
+                    author: "Howard Zinn",
+                    summary: "A history book presenting American history through the eyes of common people.",
+                    chapters: [
+                        "Columbus, the Indians, and Human Progress",
+                        "Drawing the Color Line",
+                        "Persons of Mean and Vile Condition",
+                        "Tyranny is Tyranny",
+                        "A Kind of Revolution"
+                    ],
+                    description: "Known for its lively, clear prose as well as its scholarly research, A People's History of the United States is the only volume to tell America's story from the point of view of—and in the words of—America's women, factory workers, African-Americans, Native Americans, the working poor, and immigrant laborers."
+                }
+            },
+            {
+                id: 12,
+                title: "Harry Potter",
+                author: "J.K. Rowling",
+                genre: "fantasy",
+                color: "#9932cc",
+                spineColor: "#7a29a3",
+                content: {
+                    title: "Harry Potter and the Sorcerer's Stone",
+                    author: "J.K. Rowling",
+                    summary: "The first novel in the Harry Potter series about a young wizard.",
+                    chapters: [
+                        "The Boy Who Lived",
+                        "The Vanishing Glass",
+                        "The Letters from No One",
+                        "The Keeper of the Keys",
+                        "Diagon Alley"
+                    ],
+                    description: "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle."
+                }
+            }
+        ];
+
+        // Initialize the library
+        function initLibrary() {
+            createBooks();
+            updateBookCount();
+            startFloatingAnimation();
+        }
+
+        // Create book elements
+        function createBooks() {
+            floatingArea.innerHTML = '';
+            books = [];
+            
+            const areaRect = floatingArea.getBoundingClientRect();
+            const centerX = areaRect.width / 2;
+            const centerY = areaRect.height / 2;
+            
+            bookData.forEach((book, index) => {
+                if (currentGenre !== 'all' && book.genre !== currentGenre) return;
+                
+                // Create book element
+                const bookEl = document.createElement('div');
+                bookEl.className = 'book';
+                bookEl.id = `book-${book.id}`;
+                bookEl.dataset.bookId = book.id;
+                
+                // Set size based on slider
+                const width = 80 + (bookSizeMultiplier * 20);
+                const height = width * 1.5;
+                const thickness = 15;
+                
+                bookEl.style.width = `${width}px`;
+                bookEl.style.height = `${height}px`;
+                
+                // Position book in a circular arrangement
+                const angle = (index / bookData.length) * Math.PI * 2;
+                const radius = Math.min(areaRect.width, areaRect.height) * 0.3;
+                const x = centerX + Math.cos(angle) * radius - width/2;
+                const y = centerY + Math.sin(angle) * radius - height/2;
+                
+                bookEl.style.left = `${x}px`;
+                bookEl.style.top = `${y}px`;
+                
+                // Create book cover
+                const cover = document.createElement('div');
+                cover.className = 'book-cover';
+                cover.style.background = `linear-gradient(45deg, ${book.color} 0%, ${adjustColor(book.color, -30)} 100%)`;
+                cover.style.boxShadow = `inset 5px 0 10px rgba(0,0,0,0.2)`;
+                
+                // Add title to spine
+                const title = document.createElement('div');
+                title.className = 'book-title';
+                title.textContent = book.title;
+                cover.appendChild(title);
+                
+                // Add author to spine
+                const author = document.createElement('div');
+                author.className = 'book-author';
+                author.textContent = book.author;
+                cover.appendChild(author);
+                
+                // Create spine
+                const spine = document.createElement('div');
+                spine.className = 'book-spine';
+                spine.style.background = book.spineColor;
+                
+                // Create pages
+                const pages = document.createElement('div');
+                pages.className = 'book-pages';
+                
+                // Add page content
+                const pageContent = document.createElement('div');
+                pageContent.className = 'page-content';
+                pageContent.innerHTML = `
+                    <h3>${book.content.title}</h3>
+                    <p><strong>Author:</strong> ${book.content.author}</p>
+                    <p><strong>Summary:</strong> ${book.content.summary}</p>
+                    <h4>Chapters:</h4>
+                    <ul>
+                        ${book.content.chapters.map(chapter => `<li>${chapter}</li>`).join('')}
+                    </ul>
+                    <p>${book.content.description}</p>
+                `;
+                
+                // Add close button
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'close-book';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeBook(bookEl);
+                });
+                
+                pages.appendChild(pageContent);
+                pages.appendChild(closeBtn);
+                
+                // Assemble book
+                bookEl.appendChild(cover);
+                bookEl.appendChild(spine);
+                bookEl.appendChild(pages);
+                
+                // Add click event to open book
+                bookEl.addEventListener('click', (e) => {
+                    if (!bookEl.classList.contains('open')) {
+                        openBook(bookEl, book);
+                    }
+                });
+                
+                floatingArea.appendChild(bookEl);
+                
+                // Store book object
+                books.push({
+                    element: bookEl,
+                    id: book.id,
+                    data: book,
+                    x: x,
+                    y: y,
+                    angle: angle,
+                    radius: radius,
+                    floatOffset: Math.random() * Math.PI * 2,
+                    floatSpeed: 0.5 + Math.random() * 1
+                });
+            });
+        }
+
+        // Open a book
+        function openBook(bookEl, bookData) {
+            // Close any currently open book
+            if (currentOpenBook) {
+                closeBook(currentOpenBook);
+            }
+            
+            // Add open class to animate
+            bookEl.classList.add('open');
+            currentOpenBook = bookEl;
+            
+            // Update book info panel
+            updateBookInfo(bookData);
+            
+            // Increment open count
+            openCount++;
+            openCountElement.textContent = openCount;
+            
+            // Add overlay to dim other books
+            const overlay = document.createElement('div');
+            overlay.id = 'bookOverlay';
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'rgba(0, 0, 0, 0.7)';
+            overlay.style.zIndex = '999';
+            overlay.addEventListener('click', () => closeBook(bookEl));
+            document.body.appendChild(overlay);
+        }
+
+        // Close a book
+        function closeBook(bookEl) {
+            if (!bookEl) return;
+            
+            bookEl.classList.remove('open');
+            
+            // Remove overlay
+            const overlay = document.getElementById('bookOverlay');
+            if (overlay) {
+                overlay.remove();
+            }
+            
+            if (currentOpenBook === bookEl) {
+                currentOpenBook = null;
+            }
+        }
+
+        // Update book info panel
+        function updateBookInfo(bookData) {
+            bookInfo.innerHTML = `
+                <div class="info-title">${bookData.content.title}</div>
+                <div class="info-author">by ${bookData.content.author}</div>
+                <div class="info-description">${bookData.content.description}</div>
+            `;
+        }
+
+        // Update book count display
+        function updateBookCount() {
+            const visibleBooks = currentGenre === 'all' 
+                ? bookData.length 
+                : bookData.filter(book => book.genre === currentGenre).length;
+            bookCountElement.textContent = visibleBooks;
+        }
+
+        // Start floating animation
+        function startFloatingAnimation() {
+            function animate() {
+                const time = Date.now() / 1000;
+                const areaRect = floatingArea.getBoundingClientRect();
+                const centerX = areaRect.width / 2;
+                const centerY = areaRect.height / 2;
+                
+                books.forEach(book => {
+                    // Calculate floating position
+                    const floatX = Math.sin(time * book.floatSpeed * floatSpeed + book.floatOffset) * 20;
+                    const floatY = Math.cos(time * book.floatSpeed * floatSpeed * 0.7 + book.floatOffset) * 15;
+                    const rotation = Math.sin(time * book.floatSpeed * floatSpeed * 0.5 + book.floatOffset) * 5;
+                    
+                    // Update position if book is not open
+                    if (!book.element.classList.contains('open')) {
+                        // Gentle orbit around center
+                        const orbitX = Math.cos(time * 0.2 + book.angle) * book.radius * 0.1;
+                        const orbitY = Math.sin(time * 0.2 + book.angle) * book.radius * 0.1;
+                        
+                        const newX = centerX + Math.cos(book.angle) * book.radius - book.element.offsetWidth/2 + orbitX + floatX;
+                        const newY = centerY + Math.sin(book.angle) * book.radius - book.element.offsetHeight/2 + orbitY + floatY;
+                        
+                        book.x = newX;
+                        book.y = newY;
+                        
+                        book.element.style.left = `${newX}px`;
+                        book.element.style.top = `${newY}px`;
+                        book.element.style.transform = `rotate(${rotation}deg)`;
+                    }
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // Helper function to adjust color brightness
+        function adjustColor(color, amount) {
+            let usePound = false;
+            
+            if (color[0] === "#") {
+                color = color.slice(1);
+                usePound = true;
+            }
+            
+            const num = parseInt(color, 16);
+            let r = (num >> 16) + amount;
+            let g = ((num >> 8) & 0x00FF) + amount;
+            let b = (num & 0x0000FF) + amount;
+            
+            r = Math.min(Math.max(0, r), 255);
+            g = Math.min(Math.max(0, g), 255);
+            b = Math.min(Math.max(0, b), 255);
+            
+            return (usePound ? "#" : "") + (b | (g << 8) | (r << 16)).toString(16).padStart(6, '0');
+        }
+
+        // Event listeners
+        genreButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                genreButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                currentGenre = button.dataset.genre;
+                createBooks();
+                updateBookCount();
+            });
+        });
+
+        floatSpeedSlider.addEventListener('input', () => {
+            floatSpeed = parseFloat(floatSpeedSlider.value) / 5;
+        });
+
+        bookSizeSlider.addEventListener('input', () => {
+            bookSizeMultiplier = parseFloat(bookSizeSlider.value) / 5;
+            createBooks();
+        });
+
+        // Initialize library
+        window.addEventListener('load', initLibrary);
+        
+        // Close book when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && currentOpenBook) {
+                closeBook(currentOpenBook);
+            }
+        });
+    </script>
+</body>
+</html>
