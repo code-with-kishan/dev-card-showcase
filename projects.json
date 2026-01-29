@@ -6700,6 +6700,26 @@
     }
 },
 
+{
+  "title": "Luxury To-Do List",
+  "description": "A minimal yet luxurious to-do list application featuring a glassmorphism UI, dark and light modes, and persistent task storage using localStorage.",
+  "tags": [
+    "javascript",
+    "html",
+    "css",
+    "todo",
+    "productivity",
+    "utility"
+  ],
+  "links": {
+    "live": "/projects/todo-list/index.html"
+  },
+  "author": {
+    "name": "YOUR_NAME_HERE",
+    "github": "https://github.com/YOUR_GITHUB_USERNAME"
+  }
+}
+
   {
     "title": "Retro Terminal Website",
     "description": "A website that mimics an old computer terminal interface with command-based navigation. Features typing animation, green-on-black terminal UI, and interactive commands like help, about, and projects.",
