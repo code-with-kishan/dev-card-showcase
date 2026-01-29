@@ -1,5 +1,25 @@
 [
     {
+        "title": "Pomodoro Timer",
+        "description": "Customizable productivity timer with work/break intervals, task list integration, and session statistics. Features notifications, progress tracking, long breaks after multiple sessions, and statistics dashboard showing focus time, breaks taken, and streaks.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility",
+            "Productivity",
+            "Timer",
+            "Task Management"
+        ],
+        "links": {
+            "live": "./projects/Pomodoro-Timer/"
+        },
+        "author": {
+            "name": "Ayaanshaikh12243",
+            "github": "https://github.com/Ayaanshaikh12243"
+        }
+    },
+    {
         "title": "Password Strength Checker",
         "description": "Real-time password validator showing strength meter, requirements checklist, and security tips. Features entropy calculation, password generation, and detailed feedback on password security with common weak pattern examples.",
         "tags": [
