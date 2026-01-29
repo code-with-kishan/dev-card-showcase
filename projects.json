@@ -146,8 +146,6 @@
     {
         "title": "Temperature Converter",
         "description": "A visually driven temperature conversion tool featuring a climate dial interface. Converts Celsius to Fahrenheit and Kelvin in real time with dynamic UI feedback that adapts to temperature ranges, offering an intuitive and engaging user experience.",
-        "title": "Font Previewer Lab",
-        "description": "An advanced font previewing tool designed as a typography playground. Features live text editing, real-time font switching via interactive font cards, adjustable size and letter spacing controls, and a modern designer-focused UI for exploring typography visually.",
         "tags": [
             "HTML",
             "CSS",
@@ -156,7 +154,6 @@
         ],
         "links": {
             "live": "./projects/temperature-converter/"
-            "live": "./projects/font-previewer/"
         },
         "author": {
             "name": "Anvesha",
@@ -217,6 +214,23 @@
             "github": "https://github.com/Sneha-Amballa"
         }
     },
+    {
+        "title": "BMI Calculator",
+        "description": "A responsive and visually engaging BMI calculator designed with a health-card interface. Features an interactive height slider, real-time BMI calculation, and clear category feedback, all wrapped in a modern glassmorphism UI optimized for mobile and desktop devices.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "UI/UX"
+        ],
+        "links": {
+            "live": "./projects/bmi-calc/"
+        },
+        "author": {
+            "name": "Anvesha",
+            "github": "https://github.com/your-github-username"
+        }
+},
      {
         "title": "3D Mouse",
         "description": "A 3D mouse model that responds to user inputs for rotation and zooming, providing an interactive experience to explore the model from different angles.",
