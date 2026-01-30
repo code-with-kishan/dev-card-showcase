@@ -45,6 +45,23 @@
             "github": "https://github.com/Gupta-02"
         }
     },
+       {
+        "title": "Bubble pop",
+        "description": "Bubble pop game where players pop bubbles to score points. Features colorful graphics, popping sound effects, and increasing difficulty levels for an engaging and fun experience.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Utility Tool"
+        ],
+        "links": {
+            "live": "./projects/BubblePop/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
     {
         "title": "Parkour Grid",
         "description": "Time-based parkour challenges in abstract 3D blocks with momentum-based movement, wall-runs, slides, checkpoints, and replay ghosts. Features modular level design and endless mode.",
