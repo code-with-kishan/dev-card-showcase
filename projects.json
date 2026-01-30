@@ -7186,6 +7186,33 @@
     }
   },
   {
+    "title": "Sleep Quality Analyzer 🌙",
+    "description": "A comprehensive sleep tracking application that monitors sleep patterns, analyzes sleep quality, and provides personalized recommendations for better rest. Features sleep stage tracking (Deep, Light, REM), quality scoring, interactive charts, sleep statistics, streak tracking, and dynamic improvement tips. Includes data export functionality and beautiful night-themed UI.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Sleep Tracking",
+      "Health Analytics",
+      "Wellness",
+      "Data Visualization",
+      "Local Storage",
+      "Responsive",
+      "Sleep Science",
+      "Health Monitoring",
+      "Night Theme",
+      "Sleep Stages"
+    ],
+    "links": {
+      "live": "./projects/sleep-quality-analyzer/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
+  },
+  {
     "title": "Meditation Tracker",
     "description": "A serene meditation tracking application that helps users monitor their mindfulness practice. Features session duration logging, calm score ratings (1-10), progress visualization with interactive charts, streak tracking, and helpful meditation tips. Includes beautiful gradient design, local storage persistence, and comprehensive statistics to support consistent meditation habits.",
     "tags": [
