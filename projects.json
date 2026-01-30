@@ -6970,22 +6970,23 @@
     "author": {
       "name": "Gupta-02",
       "github": "https://github.com/Gupta-02"
+///
     }
   },
   {
-    "title": "Mood-Based Background",
-    "description": "Background color adapts based on user interaction level, creating dynamic and responsive UI feedback that enhances UX experimentation.",
+    "title": "Cassette Tape Music Player",
+    "description": "A retro cassette tape-style music player UI with play/pause controls, rotating tape animation, and progress bar styled as cassette reels. Inspired by old Walkman cassette players.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
+      "Music Player",
+      "Retro",
       "Animation",
-      "Interactive",
-      "UX",
-      "Dynamic"
+      "UI/UX"
     ],
     "links": {
-      "live": "./projects/Mood-Based-Background/"
+      "live": "./projects/Cassette-Tape-Music-Player/"
     },
     "author": {
       "name": "Sneha-Amballa",
