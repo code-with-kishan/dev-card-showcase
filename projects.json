@@ -7209,3 +7209,31 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Weight Progress Tracker 📈",
+    "description": "A comprehensive weight tracking application with monthly progress charts, target setting, statistics dashboard, and motivational features. Track your weight loss/gain journey with visual progress indicators, data persistence, and practical weight management tips.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Health",
+      "Fitness",
+      "Tracking",
+      "Progress",
+      "Local Storage",
+      "Responsive",
+      "Data Visualization",
+      "Wellness"
+    ],
+    "links": {
+      "live": "./projects/weight-progress-tracker/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
+  }
+]
+
