@@ -6991,6 +6991,29 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Monster Hunter - Mini Mario Game",
+    "description": "A platformer game featuring Mario-style gameplay with monster hunting elements. Jump between platforms, collect coins, defeat monsters with projectiles, and avoid deadly spikes. Features multiple levels with increasing difficulty, score tracking, and lives system.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Game",
+      "Platformer",
+      "Mario",
+      "Monster Hunter",
+      "Canvas",
+      "2D Game",
+      "Physics"
+    ],
+    "links": {
+      "live": "./projects/monster-hunter/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
