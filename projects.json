@@ -2961,6 +2961,22 @@
         }
     },
     {
+    "title": "Code Snippet Expiry Vault",
+    "description": "A secure web application that allows users to store code snippets with an expiration time. Snippets are automatically deleted after the set time, ensuring privacy and security.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "links": {
+        "live": "./projects/Code-Snippet-Expiry-Vault/index.html"
+    },
+    "author" : {
+        "name":"Omkar",
+        "github": "https://github.com/omkarhole"
+    }
+},
+    {
         "title": "Ultimate Ride Game",
         "description": "Ultimate Ride Game is an exciting web-based game where players navigate a vehicle through challenging terrains, avoiding obstacles and collecting rewards to achieve the highest score possible.",
         "tags": [
