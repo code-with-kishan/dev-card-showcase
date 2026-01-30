@@ -43,7 +43,8 @@
             "name": "Gupta",
             "github": "https://github.com/Gupta-02"
         }
-    },
+    },{
+        "title": "Island Builder",
         "description": "A cozy tile-placement strategy game where players build island paradises by strategically placing tiles to maximize adjacency scoring. Features random tile deck, turn-based gameplay, and beautiful island-building mechanics.",
         "tags": [
             "HTML",
@@ -6846,7 +6847,7 @@
     "name": "YOUR_NAME_HERE",
     "github": "https://github.com/YOUR_GITHUB_USERNAME"
   }
-}
+},
 
   {
     "title": "Retro Terminal Website",
