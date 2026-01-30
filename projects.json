@@ -7039,22 +7039,22 @@
     }
   },
   {
-    "title": "Nutrition Log",
-    "description": "Track your meals and maintain balanced nutrition with this interactive meal logging interface. Log food items, calculate macronutrients (protein, carbs, fat), view daily summaries with visual charts, and monitor your nutritional intake for better diet planning and fitness goals.",
+    "title": "Workout Planner",
+    "description": "Comprehensive workout planning and tracking interface with exercise schedules, progress visualization, and fitness tips. Create custom workout plans, track calories burned with interactive charts, monitor weekly progress, and get expert workout tips to improve consistency and effectiveness.",
     "tags": [
       "HTML",
       "CSS",
       "JavaScript",
-      "Nutrition",
-      "Health",
       "Fitness",
+      "Workout Planning",
+      "Progress Tracking",
       "Charts",
-      "Local Storage",
-      "Meal Tracking",
-      "Macros"
+      "Exercise Database",
+      "Health",
+      "Local Storage"
     ],
     "links": {
-      "live": "./projects/nutrition-log/"
+      "live": "./projects/workout-planner/"
     },
     "author": {
       "name": "Gupta",
