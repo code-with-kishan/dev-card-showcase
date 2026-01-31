@@ -676,6 +676,22 @@
             "github": "https://github.com/omkarhole"
         }
     },
+     {
+        "title": "WebKernal",
+        "description": "A lightweight web browser kernel that supports basic browsing functionalities such as loading web pages, navigating back and forth, and refreshing pages. Designed for simplicity and ease of use.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "links": {
+            "live": "./projects/webkernal/index.html"
+        },
+        "author": {
+            "name": "Omkar",
+            "github": "https://github.com/omkarhole"
+        }
+    },
       {
         "title": "Lego Builder Project",
         "description": "A 3D Lego building game where players can create structures using different brick sizes and colors. Features include rotation, placement, and deletion of bricks in a 3D environment.",
