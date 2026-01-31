@@ -7528,6 +7528,31 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Blood Sugar Tracker 🩸",
+    "description": "A comprehensive blood glucose monitoring interface for diabetic users. Features glucose level logging with date/time, daily trend graphs using Chart.js, personalized diet advice based on readings, and local storage for data persistence. Helps track daily glucose fluctuations with visual insights and health recommendations.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Health Monitoring",
+      "Blood Sugar",
+      "Diabetes",
+      "Data Visualization",
+      "Local Storage",
+      "Responsive",
+      "Medical",
+      "Wellness"
+    ],
+    "links": {
+      "live": "./projects/Blood-Sugar-Tracker/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
