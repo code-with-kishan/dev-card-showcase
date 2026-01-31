@@ -7602,6 +7602,26 @@
       "name": "Gupta",
       "github": "https://github.com/Gupta-02"
     }
+  },
+  {
+    "title": "Running Distance Tracker",
+    "description": "A beautiful running distance and pace tracking UI with performance graphs and helpful tips for runners to analyze pace improvement.",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Fitness",
+      "Running",
+      "Analytics",
+      "Charts"
+    ],
+    "links": {
+      "live": "./projects/Running-Distance-Tracker/"
+    },
+    "author": {
+      "name": "Gupta",
+      "github": "https://github.com/Gupta-02"
+    }
   }
 ]
 
