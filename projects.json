@@ -317,6 +317,25 @@
             "github": "https://github.com/your-github-username"
         }
         },
+        {
+    "title": "Number Sorting Race",
+    "description": "An interactive drag-and-drop sorting game where users race against time to arrange numbers in ascending order. Features a neon arcade-style UI, real-time timer, move counter, progress tracking, and visual win effects for an engaging and competitive experience.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Game",
+        "Logic",
+        "UI/UX"
+    ],
+    "links": {
+        "live": "./projects/number-sorting-race/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
       {
         "title": "Attention Span self tester",
         "description": "A web application that tests and improves users' attention span through interactive exercises and games designed to enhance focus and concentration.",
