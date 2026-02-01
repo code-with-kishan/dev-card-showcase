@@ -413,6 +413,25 @@
         }
     },
     {
+    "title": "Step Goal Challenge",
+    "description": "A daily fitness tracking challenge where users set a personal step goal and log the exact number of steps they walk. Features real-time progress tracking, automatic daily reset, streak maintenance, and a clean, user-friendly interface to encourage healthy habits through gamification.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Health",
+        "Gamification",
+        "Productivity"
+    ],
+    "links": {
+        "live": "./projects/step-goal-challenge/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
+    {
         "title": "Gravity Golf",
         "description": "A physics-based puzzle golf game where players launch a ball around planets using gravity wells to reach the goal flag. Features slingshot mechanics, orbital trajectories, par scoring system, and progressive difficulty levels.",
         "tags": [
