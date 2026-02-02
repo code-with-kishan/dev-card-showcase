@@ -491,6 +491,25 @@
             "github": "https://github.com/your-github-username"
         }
 },
+{
+  "title": "Flashcard Speed Run",
+  "description": "A fast-paced learning game that challenges users to recall answers under time pressure using interactive flashcards. Features a flip-to-reveal card system, countdown timer, score tracking, keyboard controls, and a sleek, mobile-first UI designed to make active recall engaging and effective.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Game",
+    "Education",
+    "UI/UX"
+  ],
+  "links": {
+    "live": "./projects/flash-card-speed-run/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
  {
         "title": "choice collapse simulator",
         "description": "A web application that simulates the choice collapse phenomenon, demonstrating how individuals tend to make simpler decisions when presented with too many options.",
