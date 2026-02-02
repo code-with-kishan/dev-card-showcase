@@ -232,6 +232,24 @@
             "github": "https://github.com/your-github-username"
         }
         },
+        {
+  "title": "Vocabulary Builder",
+  "description": "An interactive vocabulary learning application that helps users strengthen their word power through active recall. Features a clean card-based UI, reveal-on-demand meanings, example usage, synonym exploration, progress tracking, and a responsive, distraction-free design for effective daily learning.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Education",
+    "UI/UX"
+  ],
+  "links": {
+    "live": "./projects/vocabulary-builder/"
+  },
+  "author": {
+    "name": "Anvesha",
+    "github": "https://github.com/your-github-username"
+  }
+},
       {
         "title": "Bio Sphere Simulator",
         "description": "A web-based bio sphere simulator that allows users to create and manage a self-sustaining ecosystem. Users can add plants, animals, and environmental factors to observe interactions and balance within the bio sphere.",
