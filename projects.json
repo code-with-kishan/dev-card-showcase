@@ -401,6 +401,26 @@
         }
     },
     {
+    "title": "Budget Survival Game",
+    "description": "A real-life financial survival simulator that challenges players to manage cash flow, savings, and health under unpredictable daily expenses. Features dynamic income generation, user-defined earnings, emergency handling through savings, and a modern dark cyber-themed UI—transforming budgeting concepts into an engaging game-like experience.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Game Design",
+        "Simulation",
+        "Finance",
+        "UI/UX"
+    ],
+    "links": {
+        "live": "./projects/budget-survival-game/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
+    {
         "title": "Parkour Grid",
         "description": "Time-based parkour challenges in abstract 3D blocks with momentum-based movement, wall-runs, slides, checkpoints, and replay ghosts. Features modular level design and endless mode.",
         "tags": [
