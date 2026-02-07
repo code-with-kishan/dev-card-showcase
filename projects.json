@@ -3217,6 +3217,25 @@
         }
     },
     {
+    "title": "Confidence vs Accuracy Game",
+    "description": "An interactive quiz game that compares a user’s answer accuracy with their self-rated confidence. Players answer questions, set their confidence level, and earn or lose points based on how well their confidence matches their accuracy. Features a modern card-based UI, animated feedback, and high-score tracking.",
+    "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "UI/UX",
+        "Game",
+        "EdTech"
+    ],
+    "links": {
+        "live": "./projects/confidence-vs-accuracy-game/"
+    },
+    "author": {
+        "name": "Anvesha",
+        "github": "https://github.com/your-github-username"
+    }
+},
+    {
         "title": "Tower Of Hanoi",
         "description": "A classic Tower of Hanoi puzzle game where players move disks between pegs following specific rules to achieve the goal state. Features visual representation and move counter.",
         "tags": [
